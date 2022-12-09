@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>574330897492-3psial4k8r6vp4hgjl2fedbb2a90of2t.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.574330897492-3psial4k8r6vp4hgjl2fedbb2a90of2t</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDq8jjE78S6ynr06RzKrBB2SxPoTYwNSPo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>574330897492</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tm.utopia</string>
+	<key>PROJECT_ID</key>
+	<string>utopia-cc0d8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>utopia-cc0d8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:574330897492:ios:3ddea36911d8cf027499c1</string>
+</dict>
+</plist>
