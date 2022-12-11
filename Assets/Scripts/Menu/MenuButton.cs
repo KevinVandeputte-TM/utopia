@@ -37,7 +37,7 @@ public class MenuButton : MonoBehaviour
                     case "Start":
                         LoadScene(3);
                         break;
-                    case "Metromap":
+                    case "Metronetwork":
                         LoadScene(4);
                         break;
                     case "Metrostation":
