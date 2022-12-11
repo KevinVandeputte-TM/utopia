@@ -853,6 +853,10 @@ PrefabInstance:
       propertyPath: sceneToNavigateTo
       value: Home
       objectReference: {fileID: 0}
+    - target: {fileID: 2794897445239000045, guid: 895880634550a5144ab2c226d8c79e3b, type: 3}
+      propertyPath: menuButtonController
+      value: 
+      objectReference: {fileID: 1414328167}
     - target: {fileID: 3014509054476902201, guid: 895880634550a5144ab2c226d8c79e3b, type: 3}
       propertyPath: menuButtonController
       value: 
