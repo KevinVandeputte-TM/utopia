@@ -10,7 +10,11 @@ public class MenuButton : MonoBehaviour
 	[SerializeField] AnimatorFunctions animatorFunctions;
 	[SerializeField] int thisIndex;
     [SerializeField] string sceneToNavigateTo;
+
+	DatabaseManager databaseManager;
+
     // Update is called once per frame
+
     void Update()
     {
 		if(menuButtonController.index == thisIndex)
@@ -35,7 +39,9 @@ public class MenuButton : MonoBehaviour
                         LoadScene(2);
                         break;
                     case "Start":
-                        LoadScene(3);
+						databaseManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<DatabaseManager>();
+
+						databaseManager.CreateUser(3);
                         break;
                     case "Metronetwork":
                         LoadScene(4);
@@ -56,4 +62,6 @@ public class MenuButton : MonoBehaviour
     {
 		SceneManager.LoadScene(SceneIndex);
     }
+
+
 }
