@@ -76,3 +76,6 @@ crashlytics-build.properties
 /[Aa]ssets/ExternalDependencyManager/
 /[Aa]ssets/Firebase/
 /[Aa]ssets/Plugins/
+
+#Builds
+/BuildRun/
