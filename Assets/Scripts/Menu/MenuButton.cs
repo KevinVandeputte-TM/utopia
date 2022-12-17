@@ -9,7 +9,7 @@ public class MenuButton : MonoBehaviour
 	[SerializeField] Animator animator;
 	[SerializeField] AnimatorFunctions animatorFunctions;
 	[SerializeField] int thisIndex;
-
+    [SerializeField] string sceneToNavigateTo;
     // Update is called once per frame
     void Update()
     {
@@ -23,16 +23,27 @@ public class MenuButton : MonoBehaviour
 				animatorFunctions.disableOnce = true;
 				Debug.Log("This is fired: now we navigate!" );
 				
-				switch (thisIndex)
+				switch (sceneToNavigateTo)
                 {
-					case 0:
-						break;
-					case 1:
+					case "Home":
+                        LoadScene(0);
+                        break;
+					case "About":
 						LoadScene(1);
 						break;
-					case 2:
-						break;
-					default:
+					case "Highscores":
+                        LoadScene(2);
+                        break;
+                    case "Start":
+                        LoadScene(3);
+                        break;
+                    case "Metronetwork":
+                        LoadScene(4);
+                        break;
+                    case "Metrostation":
+                        LoadScene(5);
+                        break;
+                    default:
 						break;
                 }
 			}
