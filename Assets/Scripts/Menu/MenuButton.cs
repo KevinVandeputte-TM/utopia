@@ -38,16 +38,21 @@ public class MenuButton : MonoBehaviour
 					case "Highscores":
                         LoadScene(2);
                         break;
-                    case "Start":
-						databaseManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<DatabaseManager>();
+                    case "Login":
+                        LoadScene(3);
 
-						databaseManager.CreateUser(3);
                         break;
                     case "Metronetwork":
                         LoadScene(4);
                         break;
                     case "Metrostation":
                         LoadScene(5);
+                        break;
+					case "StartGame":
+                        databaseManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<DatabaseManager>();
+
+                        databaseManager.CreateUser(4);
+                     
                         break;
                     default:
 						break;

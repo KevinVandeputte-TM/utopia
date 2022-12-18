@@ -292,8 +292,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -154}
-  m_SizeDelta: {x: 3840, y: 1800}
+  m_AnchoredPosition: {x: 6, y: -165}
+  m_SizeDelta: {x: 3288.701, y: 1541.578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &163163197
 CanvasRenderer:
@@ -465,7 +465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 399, y: 593}
+  m_AnchoredPosition: {x: 605, y: 468}
   m_SizeDelta: {x: 266.3057, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580981968
@@ -537,7 +537,7 @@ RectTransform:
   m_GameObject: {fileID: 1071811343}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.2, z: 1}
+  m_LocalScale: {x: 0.99999994, y: 1.1999999, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1545524649}
@@ -545,8 +545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 944}
-  m_SizeDelta: {x: 3840, y: 220}
+  m_AnchoredPosition: {x: 5.192, y: 825}
+  m_SizeDelta: {x: 4392.384, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071811345
 MonoBehaviour:
@@ -621,7 +621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1019, y: 594}
+  m_AnchoredPosition: {x: -812.9999, y: 467.99988}
   m_SizeDelta: {x: 223.0684, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271216392
@@ -789,6 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  vertical: 1
   keyDown: 0
   maxIndex: 0
   audioSource: {fileID: 0}
@@ -1071,7 +1072,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1624.9999, y: 589.0001}
+  m_AnchoredPosition: {x: -1418.9998, y: 464.00012}
   m_SizeDelta: {x: 82.6041, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925273391
@@ -1151,7 +1152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226, y: 695}
+  m_AnchoredPosition: {x: 459.7, y: 571.5}
   m_SizeDelta: {x: 3840, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998645745
@@ -1187,7 +1188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 3
-  m_Text: "number#\t\t\t\t\t\t\tUsername\t\t\t\t\t\t\t\tScore"
+  m_Text: "number#\t\tUsername\t\t     \t\t\t\t\tScore"
 --- !u!222 &1998645746
 CanvasRenderer:
   m_ObjectHideFlags: 0
