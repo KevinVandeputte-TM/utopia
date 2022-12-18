@@ -14,15 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2_Highscore/Highscores.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/3_Login/Login.unity
+    guid: affd712bddf3be54c9f336e0f23630fc
   - enabled: 1
     path: Assets/Scenes/4_Metronetwork/Metronetwork.unity
     guid: ddda2fbd9a102fe4d81f845e8e78a60e
   - enabled: 1
     path: Assets/Scenes/5_Metrostations/Metrostation 1.unity
     guid: 5b453ee9b4619424fb98c9bbaef6e758
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
