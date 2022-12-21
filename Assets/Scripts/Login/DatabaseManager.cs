@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-// using Firebase.Firestore;
-// using Firebase.Extensions;
 using System.Linq;
 using UnityEngine.Networking;
 using System.Text;
@@ -80,20 +78,3 @@ public class DatabaseManager : MonoBehaviour
         request.Dispose();
     }
 }
-
-
-
-   // public void SaveToJson() {
-    //     User user = new User();
-    //     user.birthYear = birthyear;
-    //     user.name = name;
-    //     user.gender = gender;
-
-    //     string json = JsonUtility.toJson(user, true);
-    //     File.WriteAllText(Application.dataPath + "/UserDataFile.json", json);
-    // }
-
-    // public void LoadFromJson() {
-    //     string json = File.ReadAllText(Application.dataPath + "/UserDataFile.json");
-    //     User user = JsonUtility.FromJson<User>(json);
-    // }
