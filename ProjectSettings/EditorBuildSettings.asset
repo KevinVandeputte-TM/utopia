@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
     path: Assets/Scenes/3_Login/Login.unity
-    guid: affd712bddf3be54c9f336e0f23630fc
+    guid: dcb59dc8e8ade4c4a9158a3f34d919c5
   - enabled: 1
     path: Assets/Scenes/4_Metronetwork/Metronetwork.unity
     guid: ddda2fbd9a102fe4d81f845e8e78a60e
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Archive/Login.unity
+    guid: affd712bddf3be54c9f336e0f23630fc
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: a453b743a8e064a46b21389e0a38243a, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 1378cd17beb48c54680ffd5d9bc1f7f1, type: 2}

@@ -27,16 +27,5 @@ public class DropdownHandler : MonoBehaviour
         {
             dropdown.options.Add(new TMPro.TMP_Dropdown.OptionData() { text = item });
         }
-
-        // DropdownItemSelected(dropdown);
-
-        // dropdown.onValueChanged.AddListener(delegate { DropdownItemSelected(dropdown); });
     }
-
-    // void DropdownItemSelected(TMPro.TMP_Dropdown dropdown)
-    // {
-    //     int index = dropdown.value;
-
-    //     TextBox.text = dropdown.options[index].text;
-    // }
 }

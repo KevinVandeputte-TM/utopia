@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-// using Firebase.Firestore;
-// using Firebase.Extensions;
 using System.Linq;
+using UnityEngine.Networking;
+using System.Text;
 
 
 public class DatabaseManager : MonoBehaviour
 {
-    // FirebaseFirestore db;
-
     private string playerName = "";
     private string birthyear = "";
-    private string gender = "M";
+    private string interest = "-";
     public Transform dropdownMenu;
     List<TMPro.TMP_Dropdown.OptionData> menuOptions;
 
@@ -24,11 +22,8 @@ public class DatabaseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // db = FirebaseFirestore.DefaultInstance;
         int menuIndex = dropdownMenu.GetComponent<TMPro.TMP_Dropdown>().value;
         menuOptions = dropdownMenu.GetComponent<TMPro.TMP_Dropdown>().options;
-
-
     }
 
     public void ReadStringInput(string s)
@@ -44,38 +39,42 @@ public class DatabaseManager : MonoBehaviour
         Debug.Log(birthyear);
     }
 
-    public void ReadGender(Toggle sender){
+    public void ReadInterest(Toggle sender){
     // only take notice from Toggle just swtiched to On
         if(sender.isOn){
-            gender = sender.tag;
-            print ("option changed to = " + gender);
+            interest = sender.tag;
+            print ("option changed to = " + interest);
         }
     }
 
     public void CreateUser(int SceneIndex) {
         Debug.Log(playerName);
         Debug.Log(birthyear);
-        Debug.Log(gender);
+        Debug.Log(interest);
+
+        StartCoroutine(SendData());
 
         SceneManager.LoadScene(SceneIndex);
     }
-    
 
-    // public void SendUserInfo()
-    // {
-    //     User user = new User
-    //     {
-    //         Playername = playerName,
-    //         UserId = 1,
-    //         Birthyear =  int.Parse(birthyear),
-    //         Gender = "Test",
-    //         Score = 0
-    //     };
-    //     DocumentReference userRef = db.Collection("users").Document();
-    //     userRef.SetAsync(user).ContinueWithOnMainThread(task =>
-    //     {
-    //         Debug.Log("Updated User");
+ 
 
-    //     });
-    // }
+    IEnumerator SendData() {
+        UserCreate user = new UserCreate();
+        user.birthYear = int.Parse(birthyear);
+        user.name = playerName;
+        user.interest = interest;
+        string json = JsonUtility.ToJson(user, true);
+
+        string uri = "http://localhost:8080/users/save";
+
+        var request = new UnityWebRequest(uri, "POST");
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
+        request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        yield return request.SendWebRequest();
+        Debug.Log("Status Code: " + request.responseCode);
+        request.Dispose();
+    }
 }
