@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Station : MonoBehaviour
 {
@@ -12,8 +13,7 @@ public class Station : MonoBehaviour
 
 	[Header("If there is a world available, check this:")]
 	public bool isAvailable;
-	public bool isCorner; 
-	//public string world;
+	public string world;
 
 	[Header("Metro Destinations")]
 	public GameObject leftDestination;
@@ -86,10 +86,10 @@ public class Station : MonoBehaviour
 				StartCoroutine(MetroHorizontal());
 			}
 
-			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable)
+			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world!= null))
             {
 				Debug.Log("enter world");
-				//SceneManager.LoadScene(world)
+				SceneManager.LoadScene(world);
             }
 			
 		}
