@@ -13,8 +13,10 @@ public class MenuButton : MonoBehaviour
 
 	DatabaseManager databaseManager;
 
-    // Update is called once per frame
+    
+    private Transition transition;
 
+    // Update is called once per frame
     void Update()
     {
 		if(menuButtonController.index == thisIndex)
@@ -63,9 +65,23 @@ public class MenuButton : MonoBehaviour
 		}
     }
 
-	void LoadScene(int SceneIndex)
+	void LoadScene(int sceneIndex)
     {
-		SceneManager.LoadScene(SceneIndex);
+        Debug.Log("Load scene !");
+         transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
+        transition.LoadLevel(sceneIndex);
+        //this is covered in the Transition.
+        //SceneManager.LoadScene(SceneIndex);
+
+
+
+
+
+
+
+
+
+
     }
 
 
