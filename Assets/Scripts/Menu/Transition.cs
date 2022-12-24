@@ -5,12 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
-  
-
+ 
     public Animator transition;
-
-
-
 
 
     public void LoadLevel(int sceneIndex)
