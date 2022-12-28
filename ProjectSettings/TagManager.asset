@@ -16,11 +16,12 @@ TagManager:
   - People and Health
   - Tech and IT
   - Transition
+  - Character
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -55,4 +56,10 @@ TagManager:
     locked: 0
   - name: Environment
     uniqueID: 514211969
+    locked: 0
+  - name: Characters
+    uniqueID: 2827228287
+    locked: 0
+  - name: Player
+    uniqueID: 2796030367
     locked: 0
