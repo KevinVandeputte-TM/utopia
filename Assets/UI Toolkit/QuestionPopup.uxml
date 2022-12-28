@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="background-color: rgb(255, 226, 1);">
+        <ui:Label text="VRAAG X" display-tooltip-when-elided="true" style="height: 162px;" />
+    </ui:VisualElement>
+    <ui:RadioButtonGroup label="Answers" value="-1" choices="test,test,test,test" style="height: 220px;" />
+    <ui:Button text="Button" display-tooltip-when-elided="true" style="margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; -unity-font: url(&apos;project://database/Packages/com.unity.mobile.android-logcat/Editor/Fonts/consola.ttf?fileID=12800000&amp;guid=b8af58820f69b474e8f63dc40a702fbc&amp;type=3#consola&apos;); width: 50%; align-items: center; background-color: rgb(115, 231, 45);" />
+</ui:UXML>

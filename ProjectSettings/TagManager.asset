@@ -17,6 +17,7 @@ TagManager:
   - Tech and IT
   - Transition
   - Character
+  - Popup
   layers:
   - Default
   - TransparentFX
