@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 514211969
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3655621501393774895, guid: 59a3d356a8b1a64489f914d49414da86, type: 3}
+  m_Sprite: {fileID: 21300042, guid: 59a3d356a8b1a64489f914d49414da86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -184,9 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 9dd3696655f37d145bd8928e1d65bd83, type: 2}
+    _json: '{"nest":{"source":"Macro","macro":null,"embed":null}}'
+    _objectReferences: []
 --- !u!114 &1950840562
 MonoBehaviour:
   m_ObjectHideFlags: 0
