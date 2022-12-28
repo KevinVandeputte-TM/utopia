@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Animations/Characters/other characters/Idle_front.anim.meta
 guid: d668371ed258c274d8fe5fbaf21c2dff
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
+========
+guid: 054ba23aa7d57384d9d5b6394ce2864a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> main:Assets/Art/Tiles/Worlds/No Thickness/GameBorderBlue.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

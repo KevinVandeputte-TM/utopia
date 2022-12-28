@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Animations/Characters/other characters/Idle_left.anim.meta
 guid: 79b65c0efdb952748965893d2e3f037f
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
+========
+guid: 47ff8445b529c974daaacac39e96c1d2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> main:Assets/Art/Tiles/Worlds/No Thickness/GameBorderWhite.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
 guid: 2f245e8c54b2c994a987b35b287f5d7f
 DefaultImporter:
+========
+guid: 843f90a41aeb64543a3cd81fd09d56ac
+PrefabImporter:
+>>>>>>>> main:Assets/Prefabs/Environment/Trees/Tree_1.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

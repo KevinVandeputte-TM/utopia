@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Animations/Characters/other characters.meta
 guid: 00ea029033f245846be62b3304c3429c
+========
+guid: 34ca0426fcc2e8342a79f2c8b1f74edd
+>>>>>>>> main:Assets/Prefabs/Environment.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

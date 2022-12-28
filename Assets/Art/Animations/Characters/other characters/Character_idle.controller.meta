@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Animations/Characters/other characters/Character_idle.controller.meta
 guid: b789a2e00d4886d4fb852118b8ae6944
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
+========
+guid: 6138da56f6f8054488c2a8ef64defafa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> main:Assets/Art/Sprites/Environment/Worlds/Paving/Thick/GameBorder.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
