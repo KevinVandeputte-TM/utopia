@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: e97a65f3cf7b0c147a29fb716c74cf1c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Istok Web
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4254524964128a541b6186f3e2823457, type: 3}
+  - {fileID: 12800000, guid: 07579aedff246174dbbba33fc3c63e75, type: 3}
+  - {fileID: 12800000, guid: 69fe9e25cf2327e48b21f20a6281ad02, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
