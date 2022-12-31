@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Corner : MonoBehaviour
+public class Metro : MonoBehaviour
 {
-
-    public bool metro;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +13,6 @@ public class Corner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 newRotation = new Vector3(0, 0, 90);
-      
         
     }
 }

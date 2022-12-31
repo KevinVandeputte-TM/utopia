@@ -23,7 +23,7 @@ public class Station : MonoBehaviour
 
 
 	[Header("Dependencies")]
-	public GameObject metro;
+	private GameObject metro;
 	public TextMeshProUGUI stationText;
 	public TextMeshProUGUI MetroLineText;
 
@@ -36,10 +36,11 @@ public class Station : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		metro = GameObject.Find("metro");
 
 	}
 
-		
+
 	// Update is called once per frame
 	void Update()
 	{

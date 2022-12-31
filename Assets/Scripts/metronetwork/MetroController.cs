@@ -9,6 +9,8 @@ public class MetroController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PositionFromInterestId();
+ 
         
     }
 
@@ -26,4 +28,22 @@ public class MetroController : MonoBehaviour
       transform.position = position;
 */
    }
+
+ void PositionFromInterestId() {
+        //get metroId
+        int metrofrominterestId = 1;
+        // get position from metroId
+        Vector2 position = transform.position;
+        string name = "StationID"+metrofrominterestId.ToString();
+        Vector2 newPosition = GameObject.Find(name).transform.position; 
+
+      
+
+        transform.position = newPosition;
+    }
+
+
+ void PositionFromWorld() { }
+
+
 }
