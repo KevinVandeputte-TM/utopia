@@ -14,49 +14,63 @@ using System.Linq;
 using System.ComponentModel;
 using Unity.VisualScripting;
 
-public class API_calls :MonoBehaviour
+public class API_calls : MonoBehaviour
 {
+    API_handler apiHandler = new API_handler();
+    string urlbase = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/";
+
     //highscores
 
-    public async IAsyncEnumerator<List<UserModel>> GetHighscores()
+    public  Task<List<UserModel>> GetHighscores()
     {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/highscores/";
-       var result = apiHandler.Get<List<UserModel>>(url).Result;
-
-        yield return result;
-          
+        var url = urlbase+"highscores/";
+        var result =  apiHandler.Get<List<UserModel>>(url);
+            return result;
     }
 
-    //if (www.result != UnityWebRequest.Result.Success)
-    //{
-    //    Debug.Log(www.error);
-    //}
-    //else
-    //{
-    //    // Show results as text
-    //    Debug.Log(www.downloadHandler.text);
+  
+    //stations
+    public Task<List<StationModel>> GetStations()
+    {
+        var url = urlbase + "stations/";
+        var result = apiHandler.Get<List<StationModel>>(url);
+        return result;
 
-    //    // Or retrieve results as binary data
+    }
+    //questions/station_id
+    public Task<List<QuestionModel>> GetQuestionsByStation(int stationID)
+    {
+        var url = urlbase + "questions/" + stationID;
+        var result =apiHandler.Get<List<QuestionModel>>(url);
+        return result;
+    }
 
+    //station/station_id
+    public Task<StationModel> getStation(int stationID)
+    {
+        var apiHandler = new API_handler();
+        var url = urlbase + "station/" + stationID;
+        var result =  apiHandler.Get<StationModel>(url);
+        return result;
+    }
 
-    //    var jsonResponse = www.downloadHandler.text;
-    //    try
-    //    {
-    //        //  var result = JsonConvert.DeserializeObject<UserModel>(jsonResponse);
-    //        var result = JsonConvert.DeserializeObject<List<UserModel>>(jsonResponse);
-    //        Debug.Log($"Success:  {www.downloadHandler.text}");
-    //        //  return result;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        Debug.LogError($"{this} Could not parse response {ex.Message}");
-    //        //    return default;
-    //    }
+    //users
+    public Task<List<UserModel>>getUsers()
+    {
+  
+        var url = urlbase + "users/";
+        var result =  apiHandler.Get<List<UserModel>>(url);
+        return result;
 
+    }
 
-
-
+    //users/user_id
+    public Task<UserModel> getUser(int userID)
+    {
+        var url = urlbase + "users/" + userID;
+        var result = apiHandler.Get<UserModel>(url);
+        return result;
+    }
 
 }
 
@@ -64,9 +78,6 @@ public class API_calls :MonoBehaviour
 
 
 
-       
-
-    
 
 
 

@@ -8,7 +8,6 @@ using UnityEngine.Networking;
 
 public class API_handler 
 {
-    //generic type Task<UserModel>Get 
     public async Task <T> Get<T>(string url)
     {
 
@@ -34,7 +33,7 @@ public class API_handler
         }
         catch (Exception ex)
         {
-            Debug.LogError($"{this} Could not parse response {ex.Message}");
+          //  Debug.LogError($"{this} Could not parse response {ex.Message}");
            return default;
         }
     }

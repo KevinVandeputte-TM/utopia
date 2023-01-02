@@ -34,3 +34,13 @@ public class QuestionModel
     public string fThree { get; set; }
     public StationModel station { get; set; }
 }
+
+[Serializable]
+public class InterestModel
+{
+    public int id { get; set; }
+    public int interestID { get; set; }
+    public string interestname { get; set; }
+   
+    public List< StationModel> stations { get; set; }
+}
