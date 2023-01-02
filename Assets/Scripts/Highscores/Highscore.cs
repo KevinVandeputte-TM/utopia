@@ -1,26 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
+[RequireComponent(typeof(API_calls))]
 public class Highscore : MonoBehaviour
 {
 
-    private Transform entryContainer;
-    private Transform entryTemplate;
+    API_calls sn;
 
-    private void Awake()
+
+     async void Start()
     {
-        entryContainer = transform.Find("highscoreEntryContainer");
-        entryTemplate = entryContainer.Find("entryTemplate");
+        //elements to be transformed
+        Transform titletable = transform.Find("TableTitles");
+        Transform loadingtext = transform.Find("LOADING");
+        Transform entryContainer= transform.Find("highscoreEntryContainer");
+     Transform entryTemplate= entryContainer.Find("entryTemplate");
+
+        //start state
+        titletable.gameObject.SetActive(false);
+        loadingtext.gameObject.SetActive(true);
+
+        //get API SCRIPT OBJECT
+        sn = gameObject.GetComponent<API_calls>();
+
+//api call
+      var highscoreList= await sn.GetHighscores();
+
+        //hide loading text 
+        if (highscoreList != null)
+        {
+            //hide loading text
+       
+          loadingtext.gameObject.SetActive(false);
+            //show tabletitles
+         
+            titletable.gameObject.SetActive(true);
+        }
+
+        //make copies and fill in the text
+
         float templateHeight = 100f;
 
         entryTemplate.gameObject.SetActive(false);
 
-        for (int i=0; i < 15; i++)
+
+        for (int i=0; i < 10; i++)
         {
-Transform entryTransform = Instantiate(entryTemplate,entryContainer);
+            //duplicate the parent
+            Transform entryTransform = Instantiate(entryTemplate,entryContainer);
             RectTransform rectRectTransform = entryTransform.GetComponent<RectTransform>();
             rectRectTransform.anchoredPosition = new Vector2(0, -templateHeight * i);
+
+            //edit text
+            //Text_Highscore Number
+            Transform textNumber= entryTransform.GetChild(0);
+            Text textNumberT = textNumber.GetComponent<Text>();
+            textNumberT.text = (i+1).ToString();
+
+
+            //   Debug.Log(textNumber);
+
+            //Text_Highscore Score;
+            Transform textScore = entryTransform.GetChild(1);
+            Text textScoreT = textScore.GetComponent<Text>();
+            textScoreT.text = highscoreList[i].score.ToString();
+           // textScoreT.text = "SCORE" + i;
+       
+
+           // Text_Highscore Username;
+            Transform textUsername = entryTransform.GetChild(2);
+            Text textUsernameT = textUsername.GetComponent<Text>();
+            textUsernameT.text = highscoreList[i].name.ToString();
+      
+
             entryTransform.gameObject.SetActive(true);
         }
 

@@ -7,10 +7,10 @@ public class UserModel
 {
     public int userID { get; set; }
     public string name { get; set; }
-    public object interest { get; set; }
+    public int interestID { get; set; }
     public int birthyear { get; set; }
     public int score { get; set; }
-    public object stationsVisited { get; set; }
+  public List<int> stationsVisited { get; set; }
 
 }
 [Serializable]
@@ -27,10 +27,20 @@ public class StationModel
 public class QuestionModel
 {
     public int questionID { get; set; }
-    public object questiontoask { get; set; }
+    public QuestionModel questiontoask { get; set; }
     public string correctanswer { get; set; }
     public string fOne { get; set; }
     public string fTwo { get; set; }
     public string fThree { get; set; }
-    public object station { get; set; }
+    public StationModel station { get; set; }
+}
+
+[Serializable]
+public class InterestModel
+{
+    public int id { get; set; }
+    public int interestID { get; set; }
+    public string interestname { get; set; }
+   
+    public List< StationModel> stations { get; set; }
 }

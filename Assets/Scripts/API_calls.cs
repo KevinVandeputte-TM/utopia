@@ -10,68 +10,75 @@ using UnityEngine.Networking;
 using TMPro;
 using System.Threading.Tasks;
 using System;
+using System.Linq;
+using System.ComponentModel;
+using Unity.VisualScripting;
 
 public class API_calls : MonoBehaviour
 {
+    API_handler apiHandler = new API_handler();
+    string urlbase = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/";
+
     //highscores
 
-    public async void GetHighscores()
+    public  Task<List<UserModel>> GetHighscores()
     {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/highscores/";
-
-        var result = await apiHandler.Get < List < UserModel >>(url);
-
+        var url = urlbase+"highscores/";
+        var result =  apiHandler.Get<List<UserModel>>(url);
+            return result;
     }
 
+  
     //stations
-    [ContextMenu("Gethighscores")]
-    public async void GetStations()
+    public Task<List<StationModel>> GetStations()
     {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/stations/" ;
-
-        var result = await apiHandler.Get<List<StationModel>>(url);
+        var url = urlbase + "stations/";
+        var result = apiHandler.Get<List<StationModel>>(url);
+        return result;
 
     }
     //questions/station_id
-    public async void GetQuestionsByStation(int stationID)
+    public Task<List<QuestionModel>> GetQuestionsByStation(int stationID)
     {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/questions/" + stationID;
-
-        var result = await apiHandler.Get < List < QuestionModel >>(url);
-
+        var url = urlbase + "questions/" + stationID;
+        var result =apiHandler.Get<List<QuestionModel>>(url);
+        return result;
     }
 
     //station/station_id
-    public async void getStation(int stationID)
+    public Task<StationModel> getStation(int stationID)
     {
         var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/station/" + stationID;
-
-        var result = await apiHandler.Get<StationModel>(url);
-
+        var url = urlbase + "station/" + stationID;
+        var result =  apiHandler.Get<StationModel>(url);
+        return result;
     }
 
     //users
-    public async void getUsers()
+    public Task<List<UserModel>>getUsers()
     {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/users/" ;
-
-        var result = await apiHandler.Get < List < UserModel >>(url);
+  
+        var url = urlbase + "users/";
+        var result =  apiHandler.Get<List<UserModel>>(url);
+        return result;
 
     }
 
     //users/user_id
-    public async void getUser(int userID)
+    public Task<UserModel> getUser(int userID)
     {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/users/" + userID;
-
-        var result = await apiHandler.Get<UserModel>(url);
-
+        var url = urlbase + "users/" + userID;
+        var result = apiHandler.Get<UserModel>(url);
+        return result;
     }
 
 }
+
+
+
+
+
+
+
+
+
