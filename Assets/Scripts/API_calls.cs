@@ -10,68 +10,64 @@ using UnityEngine.Networking;
 using TMPro;
 using System.Threading.Tasks;
 using System;
+using System.Linq;
+using System.ComponentModel;
+using Unity.VisualScripting;
 
-public class API_calls : MonoBehaviour
+public class API_calls :MonoBehaviour
 {
     //highscores
 
-    public async void GetHighscores()
+    public async IAsyncEnumerator<List<UserModel>> GetHighscores()
     {
         var apiHandler = new API_handler();
         var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/highscores/";
+       var result = apiHandler.Get<List<UserModel>>(url).Result;
 
-        var result = await apiHandler.Get < List < UserModel >>(url);
-
+        yield return result;
+          
     }
 
-    //stations
-    [ContextMenu("Gethighscores")]
-    public async void GetStations()
-    {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/stations/" ;
+    //if (www.result != UnityWebRequest.Result.Success)
+    //{
+    //    Debug.Log(www.error);
+    //}
+    //else
+    //{
+    //    // Show results as text
+    //    Debug.Log(www.downloadHandler.text);
 
-        var result = await apiHandler.Get<List<StationModel>>(url);
+    //    // Or retrieve results as binary data
 
-    }
-    //questions/station_id
-    public async void GetQuestionsByStation(int stationID)
-    {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/questions/" + stationID;
 
-        var result = await apiHandler.Get < List < QuestionModel >>(url);
+    //    var jsonResponse = www.downloadHandler.text;
+    //    try
+    //    {
+    //        //  var result = JsonConvert.DeserializeObject<UserModel>(jsonResponse);
+    //        var result = JsonConvert.DeserializeObject<List<UserModel>>(jsonResponse);
+    //        Debug.Log($"Success:  {www.downloadHandler.text}");
+    //        //  return result;
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Debug.LogError($"{this} Could not parse response {ex.Message}");
+    //        //    return default;
+    //    }
 
-    }
 
-    //station/station_id
-    public async void getStation(int stationID)
-    {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/station/" + stationID;
 
-        var result = await apiHandler.Get<StationModel>(url);
 
-    }
-
-    //users
-    public async void getUsers()
-    {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/users/" ;
-
-        var result = await apiHandler.Get < List < UserModel >>(url);
-
-    }
-
-    //users/user_id
-    public async void getUser(int userID)
-    {
-        var apiHandler = new API_handler();
-        var url = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/users/" + userID;
-
-        var result = await apiHandler.Get<UserModel>(url);
-
-    }
 
 }
+
+
+
+
+
+       
+
+    
+
+
+
+
