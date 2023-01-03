@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
+using StateMachine = Unity.VisualScripting.StateMachine;
 
 public class Start_World : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class Start_World : MonoBehaviour
     public SpriteLibraryAsset color3;
     public SpriteLibraryAsset color4;
     public SpriteLibraryAsset color5;
+
+    public Graph machine1;
 
     // Start is called before the first frame update
     async void Start()
@@ -46,9 +50,8 @@ public class Start_World : MonoBehaviour
             //set variables for questions
             otherCharcClone.gameObject.GetComponent<Character_base>().questionID_list= i;
             otherCharcClone.gameObject.GetComponent<Character_base>().questionID_api = question.questionID;
-
-        
-
+           
+               
             i++;
         }
 
