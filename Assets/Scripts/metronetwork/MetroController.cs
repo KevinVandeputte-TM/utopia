@@ -6,10 +6,13 @@ using UnityEngine;
 
 public class MetroController : MonoBehaviour
 {
+    private static GameObject instance;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        PositionFromInterestId();
+        PositionFromInterestId(21);
  
         
     }
@@ -17,33 +20,39 @@ public class MetroController : MonoBehaviour
     // Update is called once per frame
  void Update()
    {
-      /* float horizontal = Input.GetAxis("Horizontal");
-      float vertical = Input.GetAxis("Vertical");
 
-
-      Vector2 position = transform.position;
-      position.x = position.x + 15f * horizontal * Time.deltaTime;
-      position.y = position.y + 15f * vertical * Time.deltaTime;
-
-      transform.position = position;
-*/
    }
 
- void PositionFromInterestId() {
+ async void PositionFromInterestId(int id) {
         //get metroId
-        int metrofrominterestId = 1;
-        // get position from metroId
+        //int metrofrominterestId = 1;
+        //get stationName
+        API_calls api = GameObject.Find("_SM").GetComponent<API_calls>();
+        StationModel station = await api.getStation(id);
+        Debug.Log(station);
+        string stationName = station.education.ToString();
+
+        // get position from station
         Vector2 position = transform.position;
-        string name = "StationID"+metrofrominterestId.ToString();
-        Vector2 newPosition = GameObject.Find(name).transform.position; 
-
-      
-
+        Vector2 newPosition = GameObject.Find(stationName).transform.position;       
         transform.position = newPosition;
     }
 
 
- void PositionFromWorld() { }
+    void Awake()
+    {
+
+        DontDestroyOnLoad(transform.gameObject);
+
+        if (instance == null)
+        {
+            instance = gameObject;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
 
 }
