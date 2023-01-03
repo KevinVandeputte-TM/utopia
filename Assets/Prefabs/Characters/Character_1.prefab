@@ -236,6 +236,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionID_list: 0
   questionID_api: 0
-  walkingspeed: 0
-  moveX: 0
-  moveY: 0
