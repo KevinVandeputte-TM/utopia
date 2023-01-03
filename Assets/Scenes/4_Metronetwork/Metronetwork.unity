@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 34391632}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: People and Health
+  m_TagString: Life Sciences and Chemistry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 168714964}
   m_Layer: 0
   m_Name: StationLichtblauw (4)
-  m_TagString: Untagged
+  m_TagString: Sport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationName: station 100
+  stationName: tussenstop
   metroLine: Sport
   isAvailable: 0
   world: 
@@ -746,36 +746,14 @@ GameObject:
   m_Component:
   - component: {fileID: 478691887}
   - component: {fileID: 478691886}
-  - component: {fileID: 478691885}
+  - component: {fileID: 478691888}
   m_Layer: 0
   m_Name: StationLichtblauw (2)
-  m_TagString: Untagged
+  m_TagString: Sport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &478691885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478691884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationName: Sport en bewegen
-  metroLine: Sport
-  isAvailable: 0
-  world: 
-  leftDestination: {fileID: 1155350353}
-  upDestination: {fileID: 1696549740}
-  rightDestination: {fileID: 0}
-  downDestination: {fileID: 0}
-  stationText: {fileID: 982994511}
-  MetroLineText: {fileID: 1148868492}
 --- !u!212 &478691886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -843,6 +821,27 @@ Transform:
   m_Father: {fileID: 1013895812}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &478691888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478691884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95a3f78fc57e1d4e9e72edd710d1ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationID: 18
+  isAvailable: 0
+  world: 
+  leftDestination: {fileID: 1155350353}
+  upDestination: {fileID: 1696549740}
+  rightDestination: {fileID: 0}
+  downDestination: {fileID: 0}
+  stationText: {fileID: 982994511}
+  MetroLineText: {fileID: 1148868492}
 --- !u!1 &519509645
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +855,7 @@ GameObject:
   - component: {fileID: 519509648}
   m_Layer: 0
   m_Name: StationDonkergroen
-  m_TagString: Untagged
+  m_TagString: Life Sciences and Chemistry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -937,11 +936,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 519509645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
+  m_Script: {fileID: 11500000, guid: d95a3f78fc57e1d4e9e72edd710d1ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationName: station
-  metroLine: Life Sciences & Chemistry
+  stationID: 19
   isAvailable: 0
   world: 
   leftDestination: {fileID: 0}
@@ -1083,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationName: station
+  stationName: tussenstation
   metroLine: People & Health
   isAvailable: 0
   world: 
@@ -1107,7 +1105,7 @@ GameObject:
   - component: {fileID: 717589539}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Business and Tourism
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1206,7 +1204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 778690483}
   - component: {fileID: 778690482}
-  - component: {fileID: 778690484}
   - component: {fileID: 778690485}
   m_Layer: 0
   m_Name: StationPistache4
@@ -1282,28 +1279,6 @@ Transform:
   m_Father: {fileID: 176986015}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &778690484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778690481}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationName: station
-  metroLine: People & Health
-  isAvailable: 0
-  world: 
-  leftDestination: {fileID: 0}
-  upDestination: {fileID: 0}
-  rightDestination: {fileID: 0}
-  downDestination: {fileID: 1743940337}
-  stationText: {fileID: 982994511}
-  MetroLineText: {fileID: 1148868492}
 --- !u!114 &778690485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,7 +1829,7 @@ GameObject:
   - component: {fileID: 1016652745}
   m_Layer: 0
   m_Name: StationLichtblauw (5)
-  m_TagString: Untagged
+  m_TagString: Sport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2006,7 +1981,7 @@ GameObject:
   - component: {fileID: 1108231193}
   m_Layer: 0
   m_Name: StationDonkergroen2
-  m_TagString: Untagged
+  m_TagString: Life Sciences and Chemistry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2071,7 +2046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108231190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.21, y: 2.07, z: -0.8065664}
+  m_LocalPosition: {x: -3.21, y: 2.02, z: -0.8065664}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.14}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2087,11 +2062,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1108231190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
+  m_Script: {fileID: 11500000, guid: d95a3f78fc57e1d4e9e72edd710d1ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationName: tekst
-  metroLine: Life Sciences & Chemistry
+  stationID: 20
   isAvailable: 0
   world: 
   leftDestination: {fileID: 0}
@@ -2110,10 +2084,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1135065619}
   - component: {fileID: 1135065621}
-  - component: {fileID: 1135065620}
+  - component: {fileID: 1135065622}
   m_Layer: 0
   m_Name: StationRoos
-  m_TagString: Untagged
+  m_TagString: Media and Communication
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2133,28 +2107,6 @@ Transform:
   m_Father: {fileID: 935297528}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1135065620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135065618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationName: Communicatie
-  metroLine: Media & Communication
-  isAvailable: 0
-  world: 
-  leftDestination: {fileID: 0}
-  upDestination: {fileID: 0}
-  rightDestination: {fileID: 2034084494}
-  downDestination: {fileID: 0}
-  stationText: {fileID: 982994511}
-  MetroLineText: {fileID: 1148868492}
 --- !u!212 &1135065621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2207,6 +2159,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1135065622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135065618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95a3f78fc57e1d4e9e72edd710d1ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationID: 12
+  isAvailable: 0
+  world: 
+  leftDestination: {fileID: 0}
+  upDestination: {fileID: 0}
+  rightDestination: {fileID: 2034084494}
+  downDestination: {fileID: 0}
+  stationText: {fileID: 982994511}
+  MetroLineText: {fileID: 1148868492}
 --- !u!1 &1148868491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,7 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationName: station 240
+  stationName: tussenstation
   metroLine: Sport
   isAvailable: 0
   world: 
@@ -2826,7 +2799,7 @@ GameObject:
   - component: {fileID: 1351775909}
   m_Layer: 0
   m_Name: StationKruistpuntBlauwDonkergroen
-  m_TagString: Untagged
+  m_TagString: Life Sciences and Chemistry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2910,7 +2883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationName: station andere
+  stationName: tussenstation
   metroLine: Sport
   isAvailable: 0
   world: 
@@ -3183,7 +3156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687503123}
   - component: {fileID: 1687503125}
-  - component: {fileID: 1687503124}
+  - component: {fileID: 1687503126}
   m_Layer: 0
   m_Name: StationLichtblauw (6)
   m_TagString: Sport
@@ -3206,28 +3179,6 @@ Transform:
   m_Father: {fileID: 1013895812}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1687503124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687503122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationName: station 8570
-  metroLine: Sport
-  isAvailable: 0
-  world: 
-  leftDestination: {fileID: 0}
-  upDestination: {fileID: 0}
-  rightDestination: {fileID: 877500430}
-  downDestination: {fileID: 1735728289}
-  stationText: {fileID: 982994511}
-  MetroLineText: {fileID: 1148868492}
 --- !u!212 &1687503125
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3280,6 +3231,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1687503126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687503122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95a3f78fc57e1d4e9e72edd710d1ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationID: 18
+  isAvailable: 0
+  world: 
+  leftDestination: {fileID: 0}
+  upDestination: {fileID: 0}
+  rightDestination: {fileID: 877500430}
+  downDestination: {fileID: 1735728289}
+  stationText: {fileID: 982994511}
+  MetroLineText: {fileID: 1148868492}
 --- !u!1 &1696549740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,7 +3368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1735728290}
   - component: {fileID: 1735728292}
-  - component: {fileID: 1735728291}
   - component: {fileID: 1735728293}
   m_Layer: 0
   m_Name: StationKruispuntBlauwPaars
@@ -3420,28 +3391,6 @@ Transform:
   m_Father: {fileID: 1013895812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1735728291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735728289}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationName: Leraar secundair onderwijs
-  metroLine: Sport
-  isAvailable: 0
-  world: 
-  leftDestination: {fileID: 350914075}
-  upDestination: {fileID: 1687503122}
-  rightDestination: {fileID: 0}
-  downDestination: {fileID: 1696549740}
-  stationText: {fileID: 982994511}
-  MetroLineText: {fileID: 1148868492}
 --- !u!212 &1735728292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3760,36 +3709,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2034084497}
   - component: {fileID: 2034084496}
-  - component: {fileID: 2034084495}
+  - component: {fileID: 2034084498}
   m_Layer: 0
   m_Name: StationKruispuntGeelRoos
-  m_TagString: Untagged
+  m_TagString: Media and Communication
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2034084495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034084494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be1cfa973690342b7c99bc52448e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stationName: Communicatie
-  metroLine: Media & Communication
-  isAvailable: 0
-  world: 
-  leftDestination: {fileID: 1135065618}
-  upDestination: {fileID: 1473363123}
-  rightDestination: {fileID: 0}
-  downDestination: {fileID: 0}
-  stationText: {fileID: 982994511}
-  MetroLineText: {fileID: 1148868492}
 --- !u!212 &2034084496
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3857,6 +3784,27 @@ Transform:
   m_Father: {fileID: 578352169}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2034084498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034084494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95a3f78fc57e1d4e9e72edd710d1ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationID: 11
+  isAvailable: 0
+  world: 
+  leftDestination: {fileID: 1135065618}
+  upDestination: {fileID: 1473363123}
+  rightDestination: {fileID: 0}
+  downDestination: {fileID: 0}
+  stationText: {fileID: 982994511}
+  MetroLineText: {fileID: 1148868492}
 --- !u!1 &2088407141
 GameObject:
   m_ObjectHideFlags: 0
