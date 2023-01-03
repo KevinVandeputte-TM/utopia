@@ -33,7 +33,7 @@ public class API_handler
         }
         catch (Exception ex)
         {
-          //  Debug.LogError($"{this} Could not parse response {ex.Message}");
+       Debug.LogError($"{this} Could not parse response {ex.Message}");
            return default;
         }
     }
