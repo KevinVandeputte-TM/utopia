@@ -11,11 +11,6 @@ public class Character_base : MonoBehaviour
     public int questionID_list;
     public int questionID_api;
 
-    //Walking
-    public float walkingspeed;
-    public float moveX;
-    public float moveY;
-
 
 
     // Start is called before the first frame update
