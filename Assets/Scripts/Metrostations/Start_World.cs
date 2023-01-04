@@ -37,7 +37,7 @@ public class Start_World : MonoBehaviour
         int i = 0;
      
 
-        foreach (var question in questionList)
+        foreach (QuestionModel question in questionList)
         {
             var position = new Vector2(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
 
