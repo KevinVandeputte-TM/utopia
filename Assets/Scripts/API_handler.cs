@@ -42,12 +42,37 @@ public class API_handler
 
 
 
-    public async Task Put<T>(string url, UserModel user)
+    public async Task Put(string url, UserModel user)
     {
         //user to json
         string json = JsonConvert.SerializeObject(user);
         //putting out request
         using var www = UnityWebRequest.Put(url, json);
+        www.SetRequestHeader("Content-Type", "application/json");
+
+
+        var operation = www.SendWebRequest();
+        //response not right away
+        while (!operation.isDone)
+            await Task.Yield();
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Debug.Log("Upload complete!");
+        }
+
+    }
+
+    public async Task Post(string url, UserModel user)
+    {
+        //user to json
+        string json = JsonConvert.SerializeObject(user);
+        //putting out request
+        using var www = UnityWebRequest.Post(url, json);
         www.SetRequestHeader("Content-Type", "application/json");
 
 

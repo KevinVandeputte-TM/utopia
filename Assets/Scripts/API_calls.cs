@@ -68,7 +68,7 @@ public class API_calls : MonoBehaviour
         var result = apiHandler.Get<UserModel>(url);
         return result;
     }
-    //users/user_id
+    //POST user /user_id
     public Task updateUser(int userID, int newscore)
     {
         //get the user
@@ -78,10 +78,27 @@ public class API_calls : MonoBehaviour
 
         //start the put request
         var url = urlbase + "user";
-        var result = apiHandler.Put<string>(url, user );
+        var result = apiHandler.Put(url, user );
         return result;
     }
 
+    //users/user_id
+    public Task addUser(string name, int birthyear, int interestID)
+    {
+        //get the user
+        UserModel user = new UserModel();
+        user.name = name;
+        user.birthyear = birthyear;
+        user.interestID = interestID;
+        user.score = 0;
+
+
+
+        //start the put request
+        var url = urlbase + "user";
+        var result = apiHandler.Post(url, user);
+        return result;
+    }
 
 
 }
