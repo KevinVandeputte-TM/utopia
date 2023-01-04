@@ -20,23 +20,20 @@ public class API_calls : MonoBehaviour
     string urlbase = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/";
 
     //highscores
-
-    public  Task<List<UserModel>> GetHighscores()
+        public  Task<List<UserModel>> GetHighscores()
     {
         var url = urlbase+"highscores/";
         var result =  apiHandler.Get<List<UserModel>>(url);
             return result;
     }
 
-  
-    //stations
+      //stations
     public Task<List<StationModel>> GetStations()
     {
         var url = urlbase + "stations/";
         var result = apiHandler.Get<List<StationModel>>(url);
         return result;
-
-    }
+            }
     //questions/station_id
     public Task<List<QuestionModel>> GetQuestionsByStation(int stationID)
     {
@@ -64,13 +61,28 @@ public class API_calls : MonoBehaviour
 
     }
 
-    //users/user_id
+    //PUT user = > give the ID and new score
     public Task<UserModel> getUser(int userID)
     {
         var url = urlbase + "users/" + userID;
         var result = apiHandler.Get<UserModel>(url);
         return result;
     }
+    //users/user_id
+    public Task updateUser(int userID, int newscore)
+    {
+        //get the user
+        UserModel user = getUser(userID).Result;
+        //update the score
+        user.score = newscore;
+
+        //start the put request
+        var url = urlbase + "user";
+        var result = apiHandler.Put<string>(url, user );
+        return result;
+    }
+
+
 
 }
 
