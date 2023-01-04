@@ -1,18 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
+
 using UnityEngine;
 
-using Newtonsoft.Json;
-using UnityEditor.Networking;
-using UnityEngine.Networking;
-using TMPro;
+
 using System.Threading.Tasks;
-using System;
-using System.Linq;
-using System.ComponentModel;
-using Unity.VisualScripting;
+
 
 public class API_calls : MonoBehaviour
 {
@@ -34,6 +27,7 @@ public class API_calls : MonoBehaviour
         var result = apiHandler.Get<List<StationModel>>(url);
         return result;
             }
+    
     //questions/station_id
     public Task<List<QuestionModel>> GetQuestionsByStation(int stationID)
     {
@@ -61,14 +55,15 @@ public class API_calls : MonoBehaviour
 
     }
 
-    //PUT user = > give the ID and new score
+    //user/user_id
     public Task<UserModel> getUser(int userID)
     {
         var url = urlbase + "users/" + userID;
         var result = apiHandler.Get<UserModel>(url);
         return result;
     }
-    //POST user /user_id
+
+    //PUT user = > give the ID and new score
     public Task updateUser(int userID, int newscore)
     {
         //get the user
@@ -82,7 +77,7 @@ public class API_calls : MonoBehaviour
         return result;
     }
 
-    //users/user_id
+    //POST = > users/user_id
     public Task addUser(string name, int birthyear, int interestID)
     {
         //get the user
