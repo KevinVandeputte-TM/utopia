@@ -71,7 +71,6 @@ public class API_calls : MonoBehaviour
         var result = apiHandler.Get<UserModel>(url);
         return result;
     }
-
 }
 
 

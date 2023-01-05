@@ -54,19 +54,17 @@ public class DatabaseManager : MonoBehaviour
 
         StartCoroutine(SendData());
 
-        SceneManager.LoadScene(SceneIndex);
+        // SceneManager.LoadScene(SceneIndex);
     }
-
- 
 
     IEnumerator SendData() {
         UserCreate user = new UserCreate();
-        user.birthYear = int.Parse(birthyear);
+        user.birthyear = int.Parse(birthyear);
         user.name = playerName;
-        user.interest = interest;
+        user.interestID = int.Parse(interest);
         string json = JsonUtility.ToJson(user, true);
 
-        string uri = "http://localhost:8080/users/save";
+        string uri = "https://edge-service-vanbroekhovenstef.cloud.okteto.net/user";
 
         var request = new UnityWebRequest(uri, "POST");
         byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
