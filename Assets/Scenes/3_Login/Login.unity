@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 137965316}
   m_Layer: 5
   m_Name: Toggle - LifeSciences&Chemistry
-  m_TagString: Life Sciences and Chemistry
+  m_TagString: 4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 214997013}
   m_Layer: 5
   m_Name: Toggle - Media&Communication
-  m_TagString: Media and Communication
+  m_TagString: 5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2417,7 +2417,7 @@ GameObject:
   - component: {fileID: 693647573}
   m_Layer: 5
   m_Name: Toggle - Tech&IT
-  m_TagString: Tech and IT
+  m_TagString: 8
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2739,7 +2739,7 @@ GameObject:
   - component: {fileID: 746043504}
   m_Layer: 5
   m_Name: Toggle - Education
-  m_TagString: Education
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3125,7 +3125,7 @@ GameObject:
   - component: {fileID: 831610851}
   m_Layer: 5
   m_Name: Toggle - Sport
-  m_TagString: Sport
+  m_TagString: 7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4639,7 +4639,7 @@ GameObject:
   - component: {fileID: 1547960565}
   m_Layer: 5
   m_Name: Toggle - Design&Build
-  m_TagString: Design and Build
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5090,7 +5090,7 @@ GameObject:
   - component: {fileID: 1870158825}
   m_Layer: 5
   m_Name: Toggle - People&Health
-  m_TagString: People and Health
+  m_TagString: 6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5459,7 +5459,7 @@ GameObject:
   - component: {fileID: 1960748748}
   m_Layer: 5
   m_Name: Toggle - Business&Tourism
-  m_TagString: Business and Tourism
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
