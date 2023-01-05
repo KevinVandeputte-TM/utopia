@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditorInternal;
+
 using UnityEngine;
 using UnityEngine.U2D.Animation;
-using StateMachine = Unity.VisualScripting.StateMachine;
+using TMPro;
+
 
 public class Start_World : MonoBehaviour
 {
@@ -17,8 +15,9 @@ public class Start_World : MonoBehaviour
     public SpriteLibraryAsset color3;
     public SpriteLibraryAsset color4;
     public SpriteLibraryAsset color5;
+    public TextMeshProUGUI stationText;
 
-    public Graph machine1;
+
 
     // Start is called before the first frame update
     async void Start()
@@ -37,7 +36,7 @@ public class Start_World : MonoBehaviour
         int i = 0;
      
 
-        foreach (var question in questionList)
+        foreach (QuestionModel question in questionList)
         {
             var position = new Vector2(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
 
@@ -61,6 +60,6 @@ public class Start_World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        stationText.text = CurrentUser.Instance.currentStation.education + "   (score: " + CurrentUser.Instance.user.score + ")";
     }
 }

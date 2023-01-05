@@ -39,6 +39,7 @@ public class LeaveWorld : MonoBehaviour
     {//choice==0 no     choice==1 yes
         if (choice == 1)
         {
+            CurrentUser.Instance.setCurrentStation(0);
             SceneManager.LoadScene("Metronetwork");
 
         }

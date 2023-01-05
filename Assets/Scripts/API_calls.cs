@@ -1,18 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
+
 using UnityEngine;
 
-using Newtonsoft.Json;
-using UnityEditor.Networking;
-using UnityEngine.Networking;
-using TMPro;
+
 using System.Threading.Tasks;
-using System;
-using System.Linq;
-using System.ComponentModel;
-using Unity.VisualScripting;
+
 
 public class API_calls : MonoBehaviour
 {
@@ -20,23 +13,21 @@ public class API_calls : MonoBehaviour
     string urlbase = "https://edge-service-utopia-kevinvandeputte-tm.cloud.okteto.net/";
 
     //highscores
-
-    public  Task<List<UserModel>> GetHighscores()
+        public  Task<List<UserModel>> GetHighscores()
     {
         var url = urlbase+"highscores/";
         var result =  apiHandler.Get<List<UserModel>>(url);
             return result;
     }
 
-  
-    //stations
+      //stations
     public Task<List<StationModel>> GetStations()
     {
         var url = urlbase + "stations/";
         var result = apiHandler.Get<List<StationModel>>(url);
         return result;
-
-    }
+            }
+    
     //questions/station_id
     public Task<List<QuestionModel>> GetQuestionsByStation(int stationID)
     {
@@ -64,11 +55,59 @@ public class API_calls : MonoBehaviour
 
     }
 
-    //users/user_id
+    //user/user_id
     public Task<UserModel> getUser(int userID)
     {
         var url = urlbase + "users/" + userID;
         var result = apiHandler.Get<UserModel>(url);
+        return result;
+    }
+
+    //PUT user = > give the ID and new score
+    public Task updateUser(int userID, int newscore)
+    {
+        //get the user
+        UserModel user = getUser(userID).Result;
+        //update the score
+        user.score = newscore;
+
+        //start the put request
+        var url = urlbase + "user";
+        var result = apiHandler.Put(url, user );
+        return result;
+    }
+
+    //PUT user = > given the user
+    public Task updateUser(UserModel user)
+    { 
+        //get the user
+        //UserModel user = getUser(userID).Result;
+        //update the score
+        //user.stationsVisited = stationsVisited;
+
+        //start the put request
+        var url = urlbase + "user";
+        var result = apiHandler.Put(url, user);
+        return result;
+
+
+    }
+
+    //POST = > users/user_id
+    public Task addUser(string name, int birthyear, int interestID)
+    {
+        //get the user
+        UserModel user = new UserModel();
+        user.name = name;
+        user.birthyear = birthyear;
+        user.interestID = interestID;
+        user.score = 0;
+
+
+
+        //start the put request
+        var url = urlbase + "user";
+        var result = apiHandler.Post(url, user);
         return result;
     }
 }
