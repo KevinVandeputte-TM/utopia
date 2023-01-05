@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.U2D.Animation;
+using TMPro;
 
 
 public class Start_World : MonoBehaviour
@@ -14,8 +15,9 @@ public class Start_World : MonoBehaviour
     public SpriteLibraryAsset color3;
     public SpriteLibraryAsset color4;
     public SpriteLibraryAsset color5;
+    public TextMeshProUGUI stationText;
 
-    
+
 
     // Start is called before the first frame update
     async void Start()
@@ -58,6 +60,6 @@ public class Start_World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        stationText.text = CurrentUser.Instance.currentStation.education + "   (score: " + CurrentUser.Instance.user.score + ")";
     }
 }
