@@ -77,6 +77,22 @@ public class API_calls : MonoBehaviour
         return result;
     }
 
+    //PUT user = > given the user
+    public Task updateUser(UserModel user)
+    { 
+        //get the user
+        //UserModel user = getUser(userID).Result;
+        //update the score
+        //user.stationsVisited = stationsVisited;
+
+        //start the put request
+        var url = urlbase + "user";
+        var result = apiHandler.Put(url, user);
+        return result;
+
+
+    }
+
     //POST = > users/user_id
     public Task addUser(string name, int birthyear, int interestID)
     {

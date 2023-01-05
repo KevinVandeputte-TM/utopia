@@ -36,7 +36,7 @@ public class StationController : MonoBehaviour
 	// Start is called before the first frame update
 	async void Start()
 	{
-		api = GameObject.Find("_SM").GetComponent<API_calls>();
+		api = GameObject.Find("Scripts").GetComponent<API_calls>();
 		station = await api.getStation(stationID);
 	
 		metro = GameObject.Find("metro");	
@@ -100,7 +100,7 @@ public class StationController : MonoBehaviour
 
 			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != null))
 			{
-				Debug.Log("enter world");
+				CurrentUser.Instance.setCurrentStation(stationID);
 				SceneManager.LoadScene(world);
 			}
 
