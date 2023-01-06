@@ -94,7 +94,7 @@ public class Start_World : MonoBehaviour
         
 
         //setting up the snawer buttons
-        float templateHeight = 180f;
+        float templateHeight = 200f;
 
         int i = 0;
         // loop over answers
