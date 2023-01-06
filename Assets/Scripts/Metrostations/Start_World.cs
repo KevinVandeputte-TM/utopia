@@ -30,8 +30,13 @@ public class Start_World : MonoBehaviour
         //get API SCRIPT OBJECT
         sn = gameObject.GetComponent<API_calls>();
 
+        //get stationID
+        CurrentUser usertest = new CurrentUser();
+        int stationID=usertest.getCurrentStationID();
+       // int stationID = CurrentUser.Instance.currentStation.stationID;
+
         //api call to get questions
-        questionList = await sn.GetQuestionsByStation(9);
+        questionList = await sn.GetQuestionsByStation(stationID);
 
         //array of colors for character
         SpriteLibraryAsset[] listOfColors= { color1, color2, color3, color4, color5 };

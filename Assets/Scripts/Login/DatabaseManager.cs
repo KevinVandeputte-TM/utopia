@@ -48,7 +48,7 @@ public class DatabaseManager : MonoBehaviour
     }
 
     public async void CreateUser(int SceneIndex) {
-        sn.addUser(playerName, int.Parse(birthyear), int.Parse(interest));
+        await sn.addUser(playerName, int.Parse(birthyear), int.Parse(interest));
 
         SceneManager.LoadScene(SceneIndex);
     }
