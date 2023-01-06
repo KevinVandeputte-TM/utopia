@@ -2767,7 +2767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &779695622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4025,6 +4025,9 @@ MonoBehaviour:
   color4: {fileID: 7108339969198208228, guid: 3509e293e9acb48479df9c8bd79642f3, type: 3}
   color5: {fileID: 7108339969198208228, guid: aae7de06ea58e5d489be580d07745f28, type: 3}
   stationText: {fileID: 779695623}
+  questionText: {fileID: 1321722681}
+  UI_question: {fileID: 2027143351}
+  questionList: []
 --- !u!4 &1025910649
 Transform:
   m_ObjectHideFlags: 0
@@ -79598,13 +79601,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2027143352}
+  - component: {fileID: 2027143353}
   m_Layer: 5
   m_Name: UI_question
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2027143352
 Transform:
   m_ObjectHideFlags: 0
@@ -79621,6 +79625,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2027143353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027143351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9eec656a29abc45801bb74391529e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionText: {fileID: 1321722681}
 --- !u!1001 &2056316519
 PrefabInstance:
   m_ObjectHideFlags: 0

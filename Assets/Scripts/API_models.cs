@@ -27,7 +27,7 @@ public class StationModel
 public class QuestionModel
 {
     public int questionID { get; set; }
-    public QuestionModel questiontoask { get; set; }
+    public string question { get; set; }
     public string correctanswer { get; set; }
     public string fOne { get; set; }
     public string fTwo { get; set; }
