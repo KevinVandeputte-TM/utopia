@@ -1,7 +1,9 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class Start_World : MonoBehaviour
@@ -16,18 +18,20 @@ public class Start_World : MonoBehaviour
     public SpriteLibraryAsset color4;
     public SpriteLibraryAsset color5;
     public TextMeshProUGUI stationText;
-
-
-
-    // Start is called before the first frame update
+    public TextMeshProUGUI questionText;
+    public GameObject UI_question;
+    public List<QuestionModel> questionList;
+    GameObject UIq;
+    //Start is called before the first frame update
     async void Start()
     {
 
+        UI_question.SetActive(false);
         //get API SCRIPT OBJECT
         sn = gameObject.GetComponent<API_calls>();
 
         //api call to get questions
-        var questionList = await sn.GetQuestionsByStation(9);
+        questionList = await sn.GetQuestionsByStation(9);
         Debug.Log(questionList);
 
         //array of colors for character
@@ -48,12 +52,10 @@ public class Start_World : MonoBehaviour
 
             //set variables for questions
             otherCharcClone.gameObject.GetComponent<Character_base>().questionID_list= i;
-            otherCharcClone.gameObject.GetComponent<Character_base>().questionID_api = question.questionID;
-           
+            //otherCharcClone.gameObject.GetComponent<Character_base>().questionID_api = question.questionID;
                
             i++;
         }
-
 
     }
 
@@ -61,5 +63,12 @@ public class Start_World : MonoBehaviour
     void Update()
     {
         stationText.text = CurrentUser.Instance.currentStation.education + "   (score: " + CurrentUser.Instance.user.score + ")";
+    }
+
+    public void showQuestion(Character_base obj)
+    {
+        questionText.text = questionList[obj.questionID_list].question;
+        UI_question.SetActive(true);
+
     }
 }
