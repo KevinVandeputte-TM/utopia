@@ -71,9 +71,10 @@ public class CurrentUser : MonoBehaviour
         return user.score;
     }
 
-    async public void setScore (int points)
+    async public void setScore ()
     {
-        await api.updateUser(user.userID, user.score + points);
+        this.user.score += 1 ;
+        await api.updateUser(this.user);
     }
 
 }

@@ -97,9 +97,9 @@ public class Start_World : MonoBehaviour
         if(questionList[obj.questionID_list].fThree != ""){
             answers.Add(questionList[obj.questionID_list].fThree);
         }
+        
         //shuffle answerslist.
         answers.shuffleList();
-        
 
         //setting up the snawer buttons
         float templateHeight = 200f;
@@ -121,8 +121,23 @@ public class Start_World : MonoBehaviour
             // fill button text
             buttonAnswerFilled.GetComponentInChildren<TextMeshProUGUI>().text = answer;
 
+            if(answer == questionList[obj.questionID_list].correctanswer){
+                Debug.Log("SETTING CORRECT ANSWER");
+                buttonAnswerFilled.GetComponent<AnswerButton>().correctanswer = true;
+            }
+
             i++;
         }        
+    }
+
+    public void checkAnswer(bool myanswer)
+    {
+        if(myanswer){
+            CurrentUser.Instance.setScore();
+        }
+
+        Debug.Log("checking..." + myanswer);
+        UI_question.SetActive(false);
     }
 
 }

@@ -10,7 +10,7 @@ public class UserModel
     public int interestID { get; set; }
     public int birthyear { get; set; }
     public int score { get; set; }
-  public List<int> stationsVisited { get; set; }
+    public List<int> stationsVisited { get; set; }
 
 }
 [Serializable]
@@ -41,6 +41,5 @@ public class InterestModel
     public int id { get; set; }
     public int interestID { get; set; }
     public string interestname { get; set; }
-   
     public List< StationModel> stations { get; set; }
 }
