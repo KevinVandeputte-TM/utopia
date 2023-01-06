@@ -37,14 +37,17 @@ public class Start_World : MonoBehaviour
         SpriteLibraryAsset[] listOfColors= { color1, color2, color3, color4, color5 };
 
         int i = 0;
-     
 
+        //parent
+        Transform charcContainer = transform.Find("/charcContainer");
+
+        //create charc per question
         foreach (QuestionModel question in questionList)
         {
             var position = new Vector2(UnityEngine.Random.Range(-10.0f, 10.0f), UnityEngine.Random.Range(-10.0f, 10.0f));
 
             //clone object
-            GameObject otherCharcClone = Instantiate(characterOriginal,position,characterOriginal.transform.rotation);
+            GameObject otherCharcClone = Instantiate(characterOriginal,position,characterOriginal.transform.rotation, charcContainer);
             otherCharcClone.gameObject.name = "OtherCharacter_" + i;
 
             //set colorscheme character
