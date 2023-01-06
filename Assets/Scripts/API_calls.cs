@@ -89,8 +89,6 @@ public class API_calls : MonoBehaviour
         var url = urlbase + "user";
         var result = apiHandler.Put(url, user);
         return result;
-
-
     }
 
     //POST = > users/user_id
@@ -103,11 +101,15 @@ public class API_calls : MonoBehaviour
         user.interestID = interestID;
         user.score = 0;
 
-
-
         //start the put request
         var url = urlbase + "user";
         var result = apiHandler.Post(url, user);
+        return result;
+    }
+
+    public Task addVisit(int stationID, int interestID) {
+        var url = urlbase + "visit?stationID=" + stationID + "&interestID=" + interestID;
+        var result = apiHandler.PostVisit(url);
         return result;
     }
 }
