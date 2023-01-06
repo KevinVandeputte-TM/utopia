@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
@@ -8,10 +9,9 @@ using UnityEngine.UI;
 
 public class Start_World : MonoBehaviour
 {
-
-
     API_calls sn;
     public GameObject characterOriginal;
+    public GameObject answerButton;
     public SpriteLibraryAsset color1;
     public SpriteLibraryAsset color2;
     public SpriteLibraryAsset color3;
@@ -32,7 +32,6 @@ public class Start_World : MonoBehaviour
 
         //api call to get questions
         questionList = await sn.GetQuestionsByStation(9);
-        Debug.Log(questionList);
 
         //array of colors for character
         SpriteLibraryAsset[] listOfColors= { color1, color2, color3, color4, color5 };
@@ -42,10 +41,11 @@ public class Start_World : MonoBehaviour
 
         foreach (QuestionModel question in questionList)
         {
-            var position = new Vector2(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            var position = new Vector2(UnityEngine.Random.Range(-10.0f, 10.0f), UnityEngine.Random.Range(-10.0f, 10.0f));
 
             //clone object
             GameObject otherCharcClone = Instantiate(characterOriginal,position,characterOriginal.transform.rotation);
+            otherCharcClone.gameObject.name = "OtherCharacter_" + i;
 
             //set colorscheme character
             otherCharcClone.gameObject.GetComponent<SpriteLibrary>().spriteLibraryAsset = listOfColors[i];
@@ -66,9 +66,71 @@ public class Start_World : MonoBehaviour
     }
 
     public void showQuestion(Character_base obj)
-    {
-        questionText.text = questionList[obj.questionID_list].question;
-        UI_question.SetActive(true);
+    {   
+        //Open the canvas
+        UI_question.SetActive(true); 
 
+        //Set the questions text
+        questionText.text = questionList[obj.questionID_list].question;
+
+        //Get list of answers    
+        List<string> answers = new List<string>();
+        
+        answers.Add(questionList[obj.questionID_list].correctanswer);
+        //if answer is not empty add to list
+        if(questionList[obj.questionID_list].fOne != ""){
+            answers.Add(questionList[obj.questionID_list].fOne);
+        }
+
+        if(questionList[obj.questionID_list].fTwo != ""){
+            answers.Add(questionList[obj.questionID_list].fTwo);
+        }
+
+        if(questionList[obj.questionID_list].fThree != ""){
+            answers.Add(questionList[obj.questionID_list].fThree);
+        }
+        //shuffle answerslist.
+        answers.shuffleList();
+        
+
+        //setting up the snawer buttons
+        float templateHeight = 180f;
+
+        int i = 0;
+        // loop over answers
+        foreach (var answer in answers)
+        {
+            //parent
+            Transform entryContainer = transform.Find("/UI_question/Canvas/Questionbox/Answerbuttons");
+            var position = new Vector2(0, 0);
+
+            //duplicate the parent
+            GameObject buttonAnswerFilled = Instantiate(answerButton, position, answerButton.transform.rotation, entryContainer);
+            buttonAnswerFilled.gameObject.name = "answer" + i.ToString();
+            //set anchor position
+            RectTransform rectRectTransform = buttonAnswerFilled.GetComponent<RectTransform>();
+            rectRectTransform.anchoredPosition = new Vector2(0, -templateHeight * i);
+            // fill button text
+            buttonAnswerFilled.GetComponentInChildren<TextMeshProUGUI>().text = answer;
+
+            i++;
+        }        
     }
+
+}
+
+// Helper class for shuffling lists
+public static class Helper{
+    public static void shuffleList<T>(this List<T> list){
+        var rnd = new System.Random();
+        int n = list.Count; 
+        while (n > 1) {  
+            n--;  
+            int k = rnd.Next(n + 1);  
+            T value = list[k];  
+            list[k] = list[n];  
+            list[n] = value;  
+        }     
+    }
+
 }
