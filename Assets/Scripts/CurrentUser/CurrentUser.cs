@@ -11,6 +11,12 @@ public class CurrentUser : MonoBehaviour
     public StationModel currentStation;
 
     private API_calls api;
+
+    public CurrentUser()
+    {
+
+    }
+
     async void Start()
     {
         api = gameObject.GetComponent<API_calls>();
@@ -19,7 +25,10 @@ public class CurrentUser : MonoBehaviour
 
     }
 
-
+    public int getCurrentStationID()
+    {
+        return 9;
+    }
 
 
     private void Awake()

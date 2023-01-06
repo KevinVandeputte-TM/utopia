@@ -30,21 +30,29 @@ public class Start_World : MonoBehaviour
         //get API SCRIPT OBJECT
         sn = gameObject.GetComponent<API_calls>();
 
+        //get stationID
+        CurrentUser usertest = new CurrentUser();
+        int stationID=usertest.getCurrentStationID();
+       // int stationID = CurrentUser.Instance.currentStation.stationID;
+
         //api call to get questions
-        questionList = await sn.GetQuestionsByStation(9);
+        questionList = await sn.GetQuestionsByStation(stationID);
 
         //array of colors for character
         SpriteLibraryAsset[] listOfColors= { color1, color2, color3, color4, color5 };
 
         int i = 0;
-     
 
+        //parent
+        Transform charcContainer = transform.Find("/charcContainer");
+
+        //create charc per question
         foreach (QuestionModel question in questionList)
         {
             var position = new Vector2(UnityEngine.Random.Range(-10.0f, 10.0f), UnityEngine.Random.Range(-10.0f, 10.0f));
 
             //clone object
-            GameObject otherCharcClone = Instantiate(characterOriginal,position,characterOriginal.transform.rotation);
+            GameObject otherCharcClone = Instantiate(characterOriginal,position,characterOriginal.transform.rotation, charcContainer);
             otherCharcClone.gameObject.name = "OtherCharacter_" + i;
 
             //set colorscheme character
@@ -94,7 +102,7 @@ public class Start_World : MonoBehaviour
         
 
         //setting up the snawer buttons
-        float templateHeight = 180f;
+        float templateHeight = 200f;
 
         int i = 0;
         // loop over answers
