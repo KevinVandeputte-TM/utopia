@@ -115,6 +115,7 @@ public class Start_World : MonoBehaviour
         {
             //parent
             Transform entryContainer = transform.Find("/UI_question/Canvas/Questionbox/Answerbuttons");
+            entryContainer.GetComponent<AnswerButtonController>().maxIndex = answers.Count - 1;
             var position = new Vector2(0, 0);
 
             //duplicate the parent
@@ -127,7 +128,6 @@ public class Start_World : MonoBehaviour
             buttonAnswerFilled.GetComponentInChildren<TextMeshProUGUI>().text = answer;
 
             if(answer == questionList[obj.questionID_list].correctanswer){
-                Debug.Log("SETTING CORRECT ANSWER");
                 buttonAnswerFilled.GetComponent<AnswerButton>().correctanswer = true;
             }
 
@@ -141,7 +141,6 @@ public class Start_World : MonoBehaviour
             CurrentUser.Instance.setScore();
         }
 
-        Debug.Log("checking..." + myanswer);
         UI_question.SetActive(false);
     }
 
