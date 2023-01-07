@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     float horizontal;
     float vertical;
     public float speed = 3.0f;
+    public bool isBusy;
+
+    public bool canMove = true;
 
 
     //For Animations
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        
         // store the input amount in a Vector2 called move. 
         Vector2 move = new Vector2(horizontal, vertical);
         //Check to see whether move.x or move.y isn’t equal to 0. 
@@ -48,6 +52,8 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
+
+
     }
 
     /*
@@ -58,18 +64,22 @@ public class PlayerController : MonoBehaviour
     */
     void FixedUpdate()
     {
-        // Move player
-        Vector2 position = rigidbody2d.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical  * Time.deltaTime;
-        rigidbody2d.MovePosition(position);
+        //Move player
+        if(canMove){
+            Vector2 position = rigidbody2d.position;
+            position.x = position.x + speed * horizontal * Time.deltaTime;
+            position.y = position.y + speed * vertical  * Time.deltaTime;
+            rigidbody2d.MovePosition(position);
 
-        //Check if animation needs to be flipped
-        if(horizontal < 0 && !facingLeft){
-            Flip();
-        } else if(horizontal > 0 && facingLeft){
-            Flip();
+            //Check if animation needs to be flipped
+            if(horizontal < 0 && !facingLeft){
+                Flip();
+            } else if(horizontal > 0 && facingLeft){
+                Flip();
+            }
         }
+
+
 
     }
 
