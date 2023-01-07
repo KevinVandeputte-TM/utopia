@@ -18,10 +18,13 @@ public class Start_World : MonoBehaviour
     public SpriteLibraryAsset color4;
     public SpriteLibraryAsset color5;
     public TextMeshProUGUI stationText;
+    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI questionText;
     public GameObject UI_question;
     public List<QuestionModel> questionList;
     GameObject UIq;
+    private CurrentUser currentUser;
+
     //Start is called before the first frame update
     async void Start()
     {
@@ -30,10 +33,11 @@ public class Start_World : MonoBehaviour
         //get API SCRIPT OBJECT
         sn = gameObject.GetComponent<API_calls>();
 
-        //get stationID
-        CurrentUser usertest = new CurrentUser();
-        int stationID=usertest.getCurrentStationID();
-       // int stationID = CurrentUser.Instance.currentStation.stationID;
+        //get currentUser, stationID, stationText;
+        currentUser = CurrentUser.getCurrentUser();
+        int stationID= currentUser.getCurrentStationID();
+        scoreText.text = "Score: ";
+        stationText.text = "Station";
 
         //api call to get questions
         questionList = await sn.GetQuestionsByStation(stationID);
@@ -70,7 +74,8 @@ public class Start_World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        stationText.text = CurrentUser.Instance.currentStation.education + "   (score: " + CurrentUser.Instance.user.score + ")";
+        stationText.text = currentUser.getCurrentStation().education;
+        scoreText.text = "Score: " +currentUser.getUser().score.ToString();
     }
 
     public void showQuestion(Character_base obj)

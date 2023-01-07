@@ -6,28 +6,28 @@ public class CurrentUser : MonoBehaviour
 {
     public static CurrentUser Instance;
     //{ get; private set; }
+    private API_calls api;
     public UserModel user;
-
     public StationModel currentStation;
 
-    private API_calls api;
-
-    public CurrentUser()
-    {
-
-    }
-
-    async void Start()
+    void Start()
     {
         api = gameObject.GetComponent<API_calls>();
-        currentStation = await api.getStation(9);
-        user = await api.getUser(1);
-
-    }
-
-    public int getCurrentStationID()
+        getCurrentUser();
+        setUser(1);
+        setCurrentStation(9);
+       }
+  
+    private CurrentUser()
     {
-        return 9;
+
+    } 
+
+    public static CurrentUser getCurrentUser() {
+        if (Instance == null) { 
+            Instance = new CurrentUser();
+        }
+        return Instance;
     }
 
 
@@ -40,15 +40,19 @@ public class CurrentUser : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
-    async void setCurrentUser(int id)
+    
+    async void setUser(int id)
     {
         user = await api.getUser(id);
+        Debug.Log(user);
+    }
 
+    public UserModel getUser()
+    {
+        return user;
     }
 
     async public void setCurrentStation(int id) {
-
         currentStation = await api.getStation(id);
         List<int> oldList = user.stationsVisited;
         List<int> newList = new List<int>();
@@ -66,11 +70,24 @@ public class CurrentUser : MonoBehaviour
 
     }
 
+    public StationModel getCurrentStation()
+    {
+        return currentStation;
+    }
+
+    //getcurrentstation
+    public int getCurrentStationID()
+    {
+        return 9;
+    }
+
+    //getScore
     public int getScore()
     {
         return user.score;
     }
 
+    //update score
     async public void setScore ()
     {
         this.user.score += 1 ;

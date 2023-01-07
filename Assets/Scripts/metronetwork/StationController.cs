@@ -15,7 +15,7 @@ public class StationController : MonoBehaviour
 
 	[Header("If there is a world available, check this:")]
 	public bool isAvailable;
-	public string world;
+	public int world;
 
 	[Header("Metro Destinations")]
 	public GameObject leftDestination;
@@ -29,7 +29,9 @@ public class StationController : MonoBehaviour
 	public TextMeshProUGUI stationText;
 	public TextMeshProUGUI MetroLineText;
 	private bool isCurrentStation;
-	private API_calls api;  
+	private API_calls api;
+	private Transition transition;
+	private CurrentUser currentUser;
 
 
 
@@ -46,6 +48,7 @@ public class StationController : MonoBehaviour
 
 
 		metroLine = gameObject.tag;
+		currentUser = CurrentUser.getCurrentUser();
 
 
 	}
@@ -98,10 +101,11 @@ public class StationController : MonoBehaviour
 				StartCoroutine(MetroHorizontal());
 			}
 
-			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != null))
+			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != 0))
 			{
 				CurrentUser.Instance.setCurrentStation(stationID);
-				SceneManager.LoadScene(world);
+				transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
+				transition.LoadLevel(world);
 			}
 
 		}
