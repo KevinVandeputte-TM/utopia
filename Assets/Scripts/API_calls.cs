@@ -63,19 +63,6 @@ public class API_calls : MonoBehaviour
         return result;
     }
 
-    //PUT user = > give the ID and new score
-    // public Task updateUser(int userID, int newscore)
-    // {
-    //     //get the user
-    //     UserModel user = getUser(userID).Result;
-    //     //update the score
-    //     user.score = newscore;
-
-    //     //start the put request
-    //     var url = urlbase + "user";
-    //     var result = apiHandler.Put(url, user );
-    //     return result;
-    // }
 
     //PUT user = > given the user
     public Task updateUser(UserModel user)
