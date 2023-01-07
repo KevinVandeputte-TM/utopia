@@ -142,6 +142,11 @@ public class Start_World : MonoBehaviour
         }
 
         UI_question.SetActive(false);
+
+        //reset player to !isBusy and canMove
+        PlayerController player = GameObject.Find("/Astronaut").GetComponent<PlayerController>();
+        player.isBusy = false; 
+        player.canMove = true;
     }
 
 }

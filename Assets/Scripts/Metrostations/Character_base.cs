@@ -16,6 +16,8 @@ public class Character_base : MonoBehaviour
 
     Start_World worldControl;
 
+    private bool isPlayed;
+
     //public GameObject UI_question;
 
 
@@ -39,9 +41,14 @@ public class Character_base : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
        PlayerController player = collider.gameObject.GetComponent<PlayerController>();
-        if (player != null)
+        if (player != null && !isPlayed && !player.isBusy)
         {
+            //show question
             worldControl.showQuestion(this);
+            //Set charater as played
+            isPlayed = true;
+            player.isBusy = true;
+            player.canMove = false;
         }
 
     }
