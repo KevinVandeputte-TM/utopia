@@ -126,6 +126,8 @@ public class Start_World : MonoBehaviour
             rectRectTransform.anchoredPosition = new Vector2(0, -templateHeight * i);
             // fill button text
             buttonAnswerFilled.GetComponentInChildren<TextMeshProUGUI>().text = answer;
+            //set index of button
+            buttonAnswerFilled.GetComponent<AnswerButton>().thisIndex = i;
 
             if(answer == questionList[obj.questionID_list].correctanswer){
                 buttonAnswerFilled.GetComponent<AnswerButton>().correctanswer = true;
