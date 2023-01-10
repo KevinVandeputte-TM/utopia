@@ -52,7 +52,7 @@ public class StationController : MonoBehaviour
 
 			if (isAvailable)
 			{
-				gameObject.GetComponent<Renderer>().material.color = new Color(0, 204, 102);
+				gameObject.GetComponent<Renderer>().material.color = new Color(0,1,0,1);
 			}
 		}
 

@@ -14,7 +14,7 @@ public class ExitButton : MonoBehaviour
 
     void Start()
     {
-        leaveworld = gameObject.GetComponent<LeaveWorld>();
+        leaveworld = GameObject.Find("Astronaut").GetComponent<LeaveWorld>();
     }
 
     // Update is called once per frame
@@ -32,8 +32,7 @@ public class ExitButton : MonoBehaviour
             {
                 animator.SetBool("pressed", false);
                 animatorFunctions.disableOnce = true;
-
-             leaveworld.onUserClickYesNo(thisIndex);
+                leaveworld.onUserClickYesNo(thisIndex);
             }
         }
         else
