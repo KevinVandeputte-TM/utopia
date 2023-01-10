@@ -94,6 +94,16 @@ public class API_calls : MonoBehaviour
         var result = apiHandler.PostVisit(url);
         return result;
     }
+
+    //get startstation when given interestID
+    public Task<int> getStartStation(int interestID)
+    {
+        var url = urlbase + "startstation/" + interestID;
+        var result = apiHandler.Get<int>(url);
+        return result;
+    }
+
+
 }
 
 

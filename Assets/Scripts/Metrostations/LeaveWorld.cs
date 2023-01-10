@@ -9,15 +9,17 @@ using UnityEngine.SceneManagement;
 public class LeaveWorld : MonoBehaviour
 {
     [SerializeField] GameObject exitPanel;
-    public int exitSceneIndex;
     private Transition transition;
-    
+    PlayerController player;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         exitPanel = GameObject.Find("exitPanel");
         exitPanel.SetActive(false);
+        player = gameObject.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -33,7 +35,6 @@ public class LeaveWorld : MonoBehaviour
             //else activate exitPanel
             else { 
                 exitPanel.SetActive(true);
-                Time.timeScale = 0;
             }
         }    
         
@@ -43,8 +44,16 @@ public class LeaveWorld : MonoBehaviour
     {
         if (collision.gameObject.name == "Entrance")
         {
-            exitPanel.SetActive(true);
-            Time.timeScale = 0;
+            
+            if (player != null && !player.isBusy)
+            {
+                //show exitpanel
+                exitPanel.SetActive(true);
+                //Set player busy 
+                player.isBusy = true;
+                player.canMove = false;
+            }
+
         }
     }
 
@@ -61,7 +70,8 @@ public class LeaveWorld : MonoBehaviour
         }
         // return to game
         exitPanel.SetActive(false);
-        Time.timeScale = 1;
+        player.isBusy = false;
+        player.canMove = true;
     }
 
 
