@@ -16,7 +16,11 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = "Score: " + currentUser.getUser().score.ToString();
+        if (currentUser.getUser() != null)
+        {
+            scoreText.text = "Score: " + currentUser.getUser().score.ToString();
+
+        }
 
     }
 }

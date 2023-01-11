@@ -10,11 +10,22 @@ public class ExitButton : MonoBehaviour
     [SerializeField] int thisIndex;
 
     private Transition transition;
+    public bool player;
+    public bool metro;
+    public int indexToNavigateTo;
     LeaveWorld leaveworld; 
 
     void Start()
     {
-        leaveworld = GameObject.Find("Astronaut").GetComponent<LeaveWorld>();
+        if(player)
+        {
+            leaveworld = GameObject.Find("Astronaut").GetComponent<LeaveWorld>();
+
+        }
+        else
+        {
+            leaveworld = GameObject.Find("Scripts").GetComponent<LeaveWorld>();
+        }
     }
 
     // Update is called once per frame
@@ -32,7 +43,7 @@ public class ExitButton : MonoBehaviour
             {
                 animator.SetBool("pressed", false);
                 animatorFunctions.disableOnce = true;
-                leaveworld.onUserClickYesNo(thisIndex);
+                leaveworld.onUserClickYesNo(thisIndex, indexToNavigateTo );
             }
         }
         else

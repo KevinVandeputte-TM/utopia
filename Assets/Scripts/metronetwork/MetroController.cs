@@ -9,6 +9,7 @@ public class MetroController : MonoBehaviour
     private GameObject instance;
     API_calls api;
     CurrentUser currentUser;
+    public bool canMove;
 
 
     // Start is called before the first frame update
@@ -20,7 +21,8 @@ public class MetroController : MonoBehaviour
         //get start station from currentUser
         currentUser = CurrentUser.getCurrentUser();
         int startposition = currentUser.getStartStationID();
-        startPosition(currentUser.getStartStationID());
+        startPosition(startposition);
+        canMove = true;
 
     }
 

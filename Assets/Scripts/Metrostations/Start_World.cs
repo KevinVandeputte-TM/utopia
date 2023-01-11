@@ -36,7 +36,7 @@ public class Start_World : MonoBehaviour
 
         //get currentUser, stationID, stationText;
         currentUser = CurrentUser.getCurrentUser();
-        stationID= currentUser.getCurrentStationID();
+        stationID= CurrentUser.Instance.getCurrentStationID();
         scoreText.text = "Score: ";
         stationText.text = "Station";
 
@@ -75,10 +75,10 @@ public class Start_World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentUser && stationID>0) {
+        if (currentUser.getCurrentStation() != null && currentUser.getCurrentStationID()>0) {
             stationText.text = currentUser.getCurrentStation().education;
             scoreText.text = "Score: " + currentUser.getUser().score.ToString();
-        }
+       }
         
     }
 

@@ -58,8 +58,8 @@ public class DatabaseManager : MonoBehaviour
         //set current user properties
         int id = await getUserIDGivenNameAndBirthYear(playerName, int.Parse(birthyear));
         currentUser.setUser(id);
-        int startstation = await sn.getStartStation(int.Parse(interest));
-        currentUser.setStartStationID(startstation);
+        StationModel startstation = await sn.getStartStation(int.Parse(interest));
+        currentUser.setStartStationID(startstation.stationID);
 
         SceneManager.LoadScene(SceneIndex);
     }

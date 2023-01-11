@@ -41,6 +41,7 @@ public class StationController : MonoBehaviour
 	async void Start()
 	{
 		api = GameObject.Find("Scripts").GetComponent<API_calls>();
+		metroController = GameObject.Find("Metro").GetComponent<MetroController>();
 		currentUser = CurrentUser.getCurrentUser();
 
 
@@ -52,17 +53,18 @@ public class StationController : MonoBehaviour
 
 			if (isAvailable)
 			{
-				gameObject.GetComponent<Renderer>().material.color = new Color(0,1,0,1);
+				gameObject.GetComponent<Renderer>().material.color = new Color(73/250f, 160/250f, 118/250f);
+				Vector3 objectScale = transform.localScale;
+				transform.localScale = new Vector3(objectScale.x * 1.5f, objectScale.y * 1.5f, objectScale.z * 1.5f);
 			}
 		}
 
 		else
 		{
-			stationName = "tussenstop";
+			stationName = "halte";
 		}
 
 		metroLine = gameObject.tag;
-
 
 	}
 
@@ -86,48 +88,51 @@ public class StationController : MonoBehaviour
 		}
 		metro.SetActive(true);
 
-
 		if (isCurrentStation)
 		{
-			stationText.text = stationName;
+			stationText.text = stationName.ToUpper();
 			MetroLineText.text = metroLine;
 
-			if (Input.GetAxis("Vertical") > 0 & (upDestination != null))
+			if (metroController.canMove)
 			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(upDestination));
-				StartCoroutine(MetroVertical());
-			}
 
-			else if (Input.GetAxis("Horizontal") > 0 && (rightDestination != null))
-			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(rightDestination));
-				StartCoroutine(MetroHorizontal());
+				if (Input.GetAxis("Vertical") > 0 & (upDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(upDestination));
+					StartCoroutine(MetroVertical());
+				}
 
-			}
-			else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
-			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(downDestination));
-				StartCoroutine(MetroVertical());
-			}
-			else if (Input.GetAxis("Horizontal") < 0 && (leftDestination != null))
-			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(leftDestination));
-				StartCoroutine(MetroHorizontal());
-			}
+				else if (Input.GetAxis("Horizontal") > 0 && (rightDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(rightDestination));
+					StartCoroutine(MetroHorizontal());
+
+				}
+				else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(downDestination));
+					StartCoroutine(MetroVertical());
+				}
+				else if (Input.GetAxis("Horizontal") < 0 && (leftDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(leftDestination));
+					StartCoroutine(MetroHorizontal());
+				}
+
+			
 
 			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != 0))
 			{
 				currentUser.setCurrentStation(stationID);
 				currentUser.setStartStationID(stationID);
-				Debug.Log("set stationID" + stationID);
-				Debug.Log("gezet: " + currentUser.getStartStationID());
 				transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
 				transition.LoadLevel(world);
 
+			}
 			}
 
 		}
