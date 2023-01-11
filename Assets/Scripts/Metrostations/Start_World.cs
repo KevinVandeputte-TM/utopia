@@ -24,6 +24,7 @@ public class Start_World : MonoBehaviour
     public List<QuestionModel> questionList;
     GameObject UIq;
     private CurrentUser currentUser;
+    private int stationID;
 
     //Start is called before the first frame update
     async void Start()
@@ -35,7 +36,7 @@ public class Start_World : MonoBehaviour
 
         //get currentUser, stationID, stationText;
         currentUser = CurrentUser.getCurrentUser();
-        int stationID= currentUser.getCurrentStationID();
+        stationID= CurrentUser.Instance.getCurrentStationID();
         scoreText.text = "Score: ";
         stationText.text = "Station";
 
@@ -74,8 +75,11 @@ public class Start_World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        stationText.text = currentUser.getCurrentStation().education;
-        scoreText.text = "Score: " +currentUser.getUser().score.ToString();
+        if (currentUser.getCurrentStation() != null && currentUser.getCurrentStationID()>0) {
+            stationText.text = currentUser.getCurrentStation().education;
+            scoreText.text = "Score: " + currentUser.getUser().score.ToString();
+       }
+        
     }
 
     public void showQuestion(Character_base obj)
@@ -140,7 +144,7 @@ public class Start_World : MonoBehaviour
     public void checkAnswer(bool myanswer)
     {
         if(myanswer){
-            CurrentUser.Instance.setScore();
+            currentUser.setScore();
         }
 
         UI_question.SetActive(false);

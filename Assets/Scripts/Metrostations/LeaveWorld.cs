@@ -6,18 +6,32 @@ using UnityEngine.SceneManagement;
 
 
 
+
 public class LeaveWorld : MonoBehaviour
 {
     [SerializeField] GameObject exitPanel;
-    public int exitSceneIndex;
     private Transition transition;
-    
+    PlayerController player;
+    MetroController metro;
+    public bool isMetroStation;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         exitPanel = GameObject.Find("exitPanel");
         exitPanel.SetActive(false);
+        if (isMetroStation) {
+            player = gameObject.GetComponent<PlayerController>();
+
+        }
+        else
+        {
+            metro = GameObject.Find("Metro").GetComponent<MetroController>();
+
+
+        }
     }
 
     // Update is called once per frame
@@ -28,12 +42,39 @@ public class LeaveWorld : MonoBehaviour
             //if in exitPanel: return to game
             if (exitPanel.activeSelf) {
                 exitPanel.SetActive(false);
-                Time.timeScale = 1;
+                if(metro != null) {
+                    // set metro can move
+                    metro.canMove = true;
+                }
+
+                if (player != null && !player.isBusy)
+                {
+                    //Set player busy 
+                    player.isBusy = false;
+                    player.canMove = true;
+
+                }
+
             }
             //else activate exitPanel
             else { 
                 exitPanel.SetActive(true);
-                Time.timeScale = 0;
+                if (metro != null)
+                {
+                   //lock metro
+                   metro.canMove = false;
+                }
+
+                if (player != null && !player.isBusy)
+                {
+                    //show exitpanel
+                    exitPanel.SetActive(true);
+                    //Set player busy 
+                    player.isBusy = true;
+                    player.canMove = false;
+
+                }
+
             }
         }    
         
@@ -43,12 +84,21 @@ public class LeaveWorld : MonoBehaviour
     {
         if (collision.gameObject.name == "Entrance")
         {
-            exitPanel.SetActive(true);
-            Time.timeScale = 0;
+            
+            if (player != null && !player.isBusy)
+            {
+                //show exitpanel
+                exitPanel.SetActive(true);
+                //Set player busy 
+                player.isBusy = true;
+                player.canMove = false;
+               
+            }
+
         }
     }
 
-    public void onUserClickYesNo(int choice)
+    public void onUserClickYesNo(int choice, int indexToNavigateTo)
     {
         //choice==0 no     choice==1 yes
         // leave metrostation
@@ -56,12 +106,24 @@ public class LeaveWorld : MonoBehaviour
         {
            CurrentUser.Instance.setCurrentStation(0);
            transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
-           transition.LoadLevel(4);
+           transition.LoadLevel(indexToNavigateTo);
 
         }
         // return to game
         exitPanel.SetActive(false);
-        Time.timeScale = 1;
+        if(player != null)
+        {
+            player.isBusy = false;
+            player.canMove = true;
+
+        }
+        if (metro != null)
+        {
+            // set metro can move
+            metro.canMove = true;
+
+        }
+
     }
 
 

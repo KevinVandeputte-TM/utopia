@@ -15,6 +15,7 @@ public class StationController : MonoBehaviour
 
 	[Header("If there is a world available, check this:")]
 	public bool isAvailable;
+	private bool isVisited;
 	public int world;
 
 	[Header("Metro Destinations")]
@@ -25,13 +26,14 @@ public class StationController : MonoBehaviour
 
 
 	[Header("Dependencies")]
-	private GameObject metro;
+	public GameObject metro;
 	public TextMeshProUGUI stationText;
 	public TextMeshProUGUI MetroLineText;
 	private bool isCurrentStation;
 	private API_calls api;
 	private Transition transition;
 	private CurrentUser currentUser;
+	MetroController metroController;
 
 
 
@@ -39,17 +41,30 @@ public class StationController : MonoBehaviour
 	async void Start()
 	{
 		api = GameObject.Find("Scripts").GetComponent<API_calls>();
-		station = await api.getStation(stationID);
-	
-		metro = GameObject.Find("metro");	
-	
-		stationName = station.education.ToString();
-		gameObject.name = stationName;
-
-
-		metroLine = gameObject.tag;
+		metroController = GameObject.Find("Metro").GetComponent<MetroController>();
 		currentUser = CurrentUser.getCurrentUser();
 
+
+		if (stationID != 0)
+		{
+			station = await api.getStation(stationID);
+			stationName = station.education.ToString();
+			gameObject.name = stationName;
+
+			if (isAvailable)
+			{
+				gameObject.GetComponent<Renderer>().material.color = new Color(73/250f, 160/250f, 118/250f);
+				Vector3 objectScale = transform.localScale;
+				transform.localScale = new Vector3(objectScale.x * 1.5f, objectScale.y * 1.5f, objectScale.z * 1.5f);
+			}
+		}
+
+		else
+		{
+			stationName = "halte";
+		}
+
+		metroLine = gameObject.tag;
 
 	}
 
@@ -57,6 +72,11 @@ public class StationController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (isVisited)
+		{
+			gameObject.GetComponent<Renderer>().material.color = new Color(0, 250, 0);
+
+		}
 
 		if (metro.transform.position == transform.position)
 		{
@@ -68,44 +88,51 @@ public class StationController : MonoBehaviour
 		}
 		metro.SetActive(true);
 
-
 		if (isCurrentStation)
 		{
-			stationText.text = stationName;
+			stationText.text = stationName.ToUpper();
 			MetroLineText.text = metroLine;
 
-			if (Input.GetAxis("Vertical") >0 & (upDestination != null))
+			if (metroController.canMove)
 			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(upDestination));
-				StartCoroutine(MetroVertical());
-			}
 
-			else if (Input.GetAxis("Horizontal")>0 && (rightDestination != null))
-			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(rightDestination));
-				StartCoroutine(MetroHorizontal());
+				if (Input.GetAxis("Vertical") > 0 & (upDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(upDestination));
+					StartCoroutine(MetroVertical());
+				}
 
-			}
-			else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
-			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(downDestination));
-				StartCoroutine(MetroVertical());
-			}
-			else if (Input.GetAxis("Horizontal")< 0 && (leftDestination != null))
-			{
-				isCurrentStation = false;
-				StartCoroutine(Movemetro(leftDestination));
-				StartCoroutine(MetroHorizontal());
-			}
+				else if (Input.GetAxis("Horizontal") > 0 && (rightDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(rightDestination));
+					StartCoroutine(MetroHorizontal());
+
+				}
+				else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(downDestination));
+					StartCoroutine(MetroVertical());
+				}
+				else if (Input.GetAxis("Horizontal") < 0 && (leftDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(leftDestination));
+					StartCoroutine(MetroHorizontal());
+				}
+
+			
 
 			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != 0))
 			{
-				CurrentUser.Instance.setCurrentStation(stationID);
+				currentUser.setCurrentStation(stationID);
+				currentUser.setStartStationID(stationID);
 				transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
 				transition.LoadLevel(world);
+
+			}
 			}
 
 		}

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using UnityEngine.Networking;
 using System.Text;
+using System.Threading.Tasks;
+
 [RequireComponent(typeof(API_calls))]
 
 
@@ -20,6 +22,8 @@ public class DatabaseManager : MonoBehaviour
     ToggleGroup toggleGroupInstance;
 
     API_calls sn;
+    CurrentUser currentUser;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,8 @@ public class DatabaseManager : MonoBehaviour
         menuOptions = dropdownMenu.GetComponent<TMPro.TMP_Dropdown>().options;
 
         sn = gameObject.GetComponent<API_calls>();
+        currentUser = CurrentUser.getCurrentUser();
+
     }
 
     public void ReadStringInput(string s)
@@ -49,7 +55,27 @@ public class DatabaseManager : MonoBehaviour
 
     public async void CreateUser(int SceneIndex) {
         await sn.addUser(playerName, int.Parse(birthyear), int.Parse(interest));
+        //set current user properties
+        int id = await getUserIDGivenNameAndBirthYear(playerName, int.Parse(birthyear));
+        currentUser.setUser(id);
+        StationModel startstation = await sn.getStartStation(int.Parse(interest));
+        currentUser.setStartStationID(startstation.stationID);
 
         SceneManager.LoadScene(SceneIndex);
+    }
+
+    //get logged in user from list of users
+    async Task<int> getUserIDGivenNameAndBirthYear(string name, int birthyear)
+    {
+        int result = 0;
+        List<UserModel> users = await sn.getUsers();
+        foreach (UserModel user in users)
+        {
+            if (result == 0 && user.name.Equals(name) && user.birthyear == birthyear)
+            {
+                result = user.userID;
+            }
+        }
+        return result;
     }
 }
