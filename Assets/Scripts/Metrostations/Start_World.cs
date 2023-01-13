@@ -31,14 +31,15 @@ public class Start_World : MonoBehaviour
     {
 
         UI_question.SetActive(false);
-        //get API SCRIPT OBJECT
-        sn = gameObject.GetComponent<API_calls>();
 
-        //get currentUser, stationID, stationText;
+         //get currentUser, stationID, stationText;
         currentUser = CurrentUser.getCurrentUser();
-        stationID= CurrentUser.Instance.getCurrentStationID();
+        stationID = CurrentUser.Instance.getCurrentStationID();
         scoreText.text = "Score: ";
         stationText.text = "Station";
+
+        //get API SCRIPT OBJECT
+        sn = gameObject.GetComponent<API_calls>();
 
         //api call to get questions
         questionList = await sn.GetQuestionsByStation(stationID);
