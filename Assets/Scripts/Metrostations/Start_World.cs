@@ -35,12 +35,14 @@ public class Start_World : MonoBehaviour
         //hide UI questions canvas when starting => only appears when collide player
         UI_question.SetActive(false);
 
-
-
-
         //loading canvas - show at startup
         Transform loadingcanvas = transform.Find("/Loading");
-loadingcanvas.gameObject.SetActive(true);
+        loadingcanvas.gameObject.SetActive(true);
+
+
+        //information UI -with scores
+        Transform informationObject = transform.Find("/UI_Information");
+        informationObject.gameObject.SetActive(false);
 
 
 
@@ -60,8 +62,9 @@ loadingcanvas.gameObject.SetActive(true);
         //if questions are fetch = stop loading anime
         if (questionList.Count > 0)
         {
+            informationObject.gameObject.SetActive(true);
             //show loading when questionlist is empty
-            loadingcanvas.gameObject.SetActive(false);
+            // loadingcanvas.gameObject.SetActive(true);
         }
 
 
