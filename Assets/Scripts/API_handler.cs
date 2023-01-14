@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 
 
+
 public class API_handler
 {
     public async Task<T> Get<T>(string url)
@@ -16,7 +17,7 @@ public class API_handler
 
         using var www = UnityWebRequest.Get(url);
         www.SetRequestHeader("Content-Type", "application/json");
-
+        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
         var operation = www.SendWebRequest();
         //response not right away
         while (!operation.isDone)
@@ -40,7 +41,7 @@ public class API_handler
             return default;
         }
     }
-
+  
     public async Task Put(string url, UserModel user)
     {
         //user to json
@@ -52,6 +53,7 @@ public class API_handler
         www.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
         www.SetRequestHeader("Content-Type", "application/json");
+        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
 
         var operation = www.SendWebRequest();
         //response not right away
@@ -80,6 +82,7 @@ public class API_handler
         www.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
         www.SetRequestHeader("Content-Type", "application/json");
+        www.SetRequestHeader("Access-Control-Allow-Origin", "*");
 
         var operation = www.SendWebRequest();
 
