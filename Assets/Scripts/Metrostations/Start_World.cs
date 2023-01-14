@@ -41,15 +41,16 @@ public class Start_World : MonoBehaviour
 
 
         //information UI -with scores
-        Transform informationObject = transform.Find("/UI_Information");
-        informationObject.gameObject.SetActive(false);
+       // Transform informationObject = transform.Find("/UI_Information");
+      //  informationObject.gameObject.SetActive(false);
 
 
 
 
         //get currentUser, stationID, stationText;
         currentUser = CurrentUser.getCurrentUser();
-        stationID = CurrentUser.Instance.getCurrentStationID();
+        stationID = 9;
+        //stationID = CurrentUser.Instance.getCurrentStationID();
         scoreText.text = "Score: ";
         stationText.text = "Station";
 
@@ -62,7 +63,7 @@ public class Start_World : MonoBehaviour
         //if questions are fetch = stop loading anime
         if (questionList.Count > 0)
         {
-            informationObject.gameObject.SetActive(true);
+           // informationObject.gameObject.SetActive(true);
             //show loading when questionlist is empty
             // loadingcanvas.gameObject.SetActive(true);
         }
