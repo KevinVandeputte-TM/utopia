@@ -47,7 +47,7 @@ public class LeaveWorld : MonoBehaviour
                     metro.canMove = true;
                 }
 
-                if (player != null && !player.isBusy)
+                if (player != null)
                 {
                     //Set player busy 
                     player.isBusy = false;
