@@ -533,18 +533,7 @@ MonoBehaviour:
     volutpat commodo sed egestas egestas. Sem et tortor consequat id. Mi in nulla
     posuere sollicitudin aliquam ultrices sagittis orci.Lorem ipsum dolor sit amet,
     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Ultricies
-    leo integer malesuada nunc vel. Nibh tellus molestie nunc non blandit massa enim.
-    Odio ut sem nulla pharetra diam sit amet nisl suscipit. Magna fermentum iaculis
-    eu non diam phasellus. Donec et odio pellentesque diam volutpat commodo sed egestas
-    egestas. Sem et tortor consequat id. Mi in nulla posuere sollicitudin aliquam
-    ultrices sagittis orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor
-    leo a diam sollicitudin tempor id eu nisl. Ultricies leo integer malesuada nunc
-    vel. Nibh tellus molestie nunc non blandit massa enim. Odio ut sem nulla pharetra
-    diam sit amet nisl suscipit. Magna fermentum iaculis eu non diam phasellus. Donec
-    et odio pellentesque diam volutpat commodo sed egestas egestas. Sem et tortor
-    consequat id. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
+    magna aliqua. Ut porttitor leo a diam sollicitudin temp.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
   m_sharedMaterial: {fileID: 773548756916339430, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
@@ -571,8 +560,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -768,17 +757,7 @@ MonoBehaviour:
     posuere sollicitudin aliquam ultrices sagittis orci.Lorem ipsum dolor sit amet,
     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
     magna aliqua. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Ultricies
-    leo integer malesuada nunc vel. Nibh tellus molestie nunc non blandit massa enim.
-    Odio ut sem nulla pharetra diam sit amet nisl suscipit. Magna fermentum iaculis
-    eu non diam phasellus. Donec et odio pellentesque diam volutpat commodo sed egestas
-    egestas. Sem et tortor consequat id. Mi in nulla posuere sollicitudin aliquam
-    ultrices sagittis orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor
-    leo a diam sollicitudin tempor id eu nisl. Ultricies leo integer malesuada nunc
-    vel. Nibh tellus molestie nunc non blandit massa enim. Odio ut sem nulla pharetra
-    diam sit amet nisl suscipit. Magna fermentum iaculis eu non diam phasellus. Donec
-    et odio pellentesque diam volutpat commodo sed egestas egestas. Sem et tortor
-    consequat id. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
+    leo integ.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
   m_sharedMaterial: {fileID: 773548756916339430, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
@@ -805,8 +784,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1046,9 +1025,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 3840, y: 2160}
+  m_ReferenceResolution: {x: 3360, y: 2160}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
