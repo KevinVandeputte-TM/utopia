@@ -3067,7 +3067,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      black_47: 1467254167
+      black_101: 1285285103
       black_42: -471616936
       black_83: 1064283570
       black_35: -1584428286
@@ -3205,8 +3205,8 @@ TextureImporter:
       black_84: 39607308
       black_102: 498014357
       black_96: -1814444931
-      black_101: 1285285103
       black_127: 146027444
+      black_47: 1467254167
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

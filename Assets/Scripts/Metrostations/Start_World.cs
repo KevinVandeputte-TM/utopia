@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.U2D.Animation;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.Playables;
 
 public class Start_World : MonoBehaviour
 {
@@ -26,13 +26,28 @@ public class Start_World : MonoBehaviour
     private CurrentUser currentUser;
     private int stationID;
 
+
+
     //Start is called before the first frame update
     async void Start()
     {
 
+        //hide UI questions canvas when starting => only appears when collide player
         UI_question.SetActive(false);
 
-         //get currentUser, stationID, stationText;
+        //loading canvas - show at startup
+        Transform loadingcanvas = transform.Find("/Loading");
+        loadingcanvas.gameObject.SetActive(true);
+
+
+        //information UI -with scores
+        Transform informationObject = transform.Find("/UI_Information");
+        informationObject.gameObject.SetActive(false);
+
+
+
+
+        //get currentUser, stationID, stationText;
         currentUser = CurrentUser.getCurrentUser();
         stationID = CurrentUser.Instance.getCurrentStationID();
         scoreText.text = "Score: ";
@@ -44,12 +59,24 @@ public class Start_World : MonoBehaviour
         //api call to get questions
         questionList = await sn.GetQuestionsByStation(stationID);
 
+        //if questions are fetch = stop loading anime
+        if (questionList.Count > 0)
+        {
+            informationObject.gameObject.SetActive(true);
+            //show loading when questionlist is empty
+            // loadingcanvas.gameObject.SetActive(true);
+        }
+
+
+
+
+
         //array of colors for character
         SpriteLibraryAsset[] listOfColors= { color1, color2, color3, color4, color5 };
 
         int i = 0;
 
-        //parent
+        //parent, where the clone characters will be placed under
         Transform charcContainer = transform.Find("/charcContainer");
 
         //create charc per question
