@@ -15,7 +15,7 @@ public class API_calls : MonoBehaviour
     //highscores
         public  Task<List<UserModel>> GetHighscores()
     {
-        var url = urlbase+"highscores/";
+        var url = urlbase+"highscores";
         var result =  apiHandler.Get<List<UserModel>>(url);
             return result;
     }
@@ -23,7 +23,7 @@ public class API_calls : MonoBehaviour
       //stations
     public Task<List<StationModel>> GetStations()
     {
-        var url = urlbase + "stations/";
+        var url = urlbase + "stations";
         var result = apiHandler.Get<List<StationModel>>(url);
         return result;
             }
@@ -49,7 +49,7 @@ public class API_calls : MonoBehaviour
     public Task<List<UserModel>>getUsers()
     {
   
-        var url = urlbase + "users/";
+        var url = urlbase + "users";
         var result =  apiHandler.Get<List<UserModel>>(url);
         return result;
 
