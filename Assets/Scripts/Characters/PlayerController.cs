@@ -21,11 +21,21 @@ public class PlayerController : MonoBehaviour
     //To check if we need to flip the animation.
     public bool facingLeft = true;
 
+    //Correct answer handling
+    // coin object
+    public GameObject coinPrefab;
+    //audio
+    AudioSource audioSource;
+    public AudioClip winSound;
+    public AudioClip lostSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        //get the needed components
         rigidbody2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();        
+        animator = GetComponent<Animator>();  
+        audioSource = GetComponent<AudioSource>();      
     }
 
     /* Update() is called every frame/time the game computes a new image.
@@ -89,6 +99,29 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    /*Celebrate function when answering correctly*/
+    public void Celebrate(){
+        //Create coin GameObject
+        GameObject coinObject = Instantiate(coinPrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        //Select the Component
+        Coin coin = coinObject.GetComponent<Coin>();
+        //execute the won function
+        coin.Won( Vector2.up, 300);
+
+        PlaySound(winSound);
+    }
+
+    /*function for wrong answer*/
+    public void Wrong(){
+        PlaySound(lostSound);
+    }
+
+    // Generic playSound function which accepts audioclips.
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
 }

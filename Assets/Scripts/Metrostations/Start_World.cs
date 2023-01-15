@@ -49,8 +49,8 @@ public class Start_World : MonoBehaviour
 
         //get currentUser, stationID, stationText;
         currentUser = CurrentUser.getCurrentUser();
-        stationID = 9;
-        //stationID = CurrentUser.Instance.getCurrentStationID();
+        //stationID = 1000;
+        stationID = CurrentUser.Instance.getCurrentStationID();
         scoreText.text = "Score: ";
         stationText.text = "Station";
 
@@ -170,16 +170,42 @@ public class Start_World : MonoBehaviour
         }        
     }
 
+    /* CHECKING QUESTION RESPONSES */
     public void checkAnswer(bool myanswer)
     {
-        if(myanswer){
-            currentUser.setScore();
+
+        //Keeping the UI Question open/active a little longer so button colors can appear
+        int i = 300;
+        do { 
+            i--;
+            UI_question.SetActive(true);
+        } while( i > 0);
+
+        /* Delete the generated answerbuttons */
+        //Select the parent GameObject
+        GameObject buttons = GameObject.Find("/UI_question/Canvas/Questionbox/Answerbuttons");
+        //Delete the children
+        for (int j = 0; j < buttons.transform.childCount; j++){
+            Destroy(buttons.transform.GetChild(j).gameObject);
         }
 
+        //Hide the UI Question Canvas
         UI_question.SetActive(false);
 
-        //reset player to !isBusy and canMove
+        // Select the Player and the PlayerController component which holds the script
         PlayerController player = GameObject.Find("/Astronaut").GetComponent<PlayerController>();
+
+        /* answer logic */
+        //if answer is correct    
+        if(myanswer){
+            currentUser.setScore();
+            player.Celebrate();
+            // if wrong answer
+        } else {
+            player.Wrong();
+        }
+
+        //reset player to !isBusy and canMove so he can move around and accept questions.
         player.isBusy = false; 
         player.canMove = true;
     }
