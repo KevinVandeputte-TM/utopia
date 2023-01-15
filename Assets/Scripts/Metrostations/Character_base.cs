@@ -35,7 +35,10 @@ public class Character_base : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Destroy character GameObject when isPlayed == true
+        if(isPlayed){
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
