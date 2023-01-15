@@ -207,6 +207,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &340862737
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.834233
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.304428
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.22986646
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138146, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501602673093138151, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
+      propertyPath: m_Name
+      value: CurrentUser
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 563f7ee575fb9fb40b692bcc2d553eee, type: 3}
 --- !u!1 &380063727
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,18 +533,7 @@ MonoBehaviour:
     volutpat commodo sed egestas egestas. Sem et tortor consequat id. Mi in nulla
     posuere sollicitudin aliquam ultrices sagittis orci.Lorem ipsum dolor sit amet,
     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Ultricies
-    leo integer malesuada nunc vel. Nibh tellus molestie nunc non blandit massa enim.
-    Odio ut sem nulla pharetra diam sit amet nisl suscipit. Magna fermentum iaculis
-    eu non diam phasellus. Donec et odio pellentesque diam volutpat commodo sed egestas
-    egestas. Sem et tortor consequat id. Mi in nulla posuere sollicitudin aliquam
-    ultrices sagittis orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor
-    leo a diam sollicitudin tempor id eu nisl. Ultricies leo integer malesuada nunc
-    vel. Nibh tellus molestie nunc non blandit massa enim. Odio ut sem nulla pharetra
-    diam sit amet nisl suscipit. Magna fermentum iaculis eu non diam phasellus. Donec
-    et odio pellentesque diam volutpat commodo sed egestas egestas. Sem et tortor
-    consequat id. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
+    magna aliqua. Ut porttitor leo a diam sollicitudin temp.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
   m_sharedMaterial: {fileID: 773548756916339430, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
@@ -514,8 +560,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -711,17 +757,7 @@ MonoBehaviour:
     posuere sollicitudin aliquam ultrices sagittis orci.Lorem ipsum dolor sit amet,
     consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
     magna aliqua. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Ultricies
-    leo integer malesuada nunc vel. Nibh tellus molestie nunc non blandit massa enim.
-    Odio ut sem nulla pharetra diam sit amet nisl suscipit. Magna fermentum iaculis
-    eu non diam phasellus. Donec et odio pellentesque diam volutpat commodo sed egestas
-    egestas. Sem et tortor consequat id. Mi in nulla posuere sollicitudin aliquam
-    ultrices sagittis orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut porttitor
-    leo a diam sollicitudin tempor id eu nisl. Ultricies leo integer malesuada nunc
-    vel. Nibh tellus molestie nunc non blandit massa enim. Odio ut sem nulla pharetra
-    diam sit amet nisl suscipit. Magna fermentum iaculis eu non diam phasellus. Donec
-    et odio pellentesque diam volutpat commodo sed egestas egestas. Sem et tortor
-    consequat id. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
+    leo integ.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
   m_sharedMaterial: {fileID: 773548756916339430, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
@@ -748,8 +784,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -989,9 +1025,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 3840, y: 2160}
+  m_ReferenceResolution: {x: 3360, y: 2160}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

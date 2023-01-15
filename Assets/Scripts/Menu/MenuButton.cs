@@ -42,13 +42,15 @@ public class MenuButton : MonoBehaviour
                         break;
                     case "Login":
                         LoadScene(3);
-
                         break;
                     case "Metronetwork":
                         LoadScene(4);
                         break;
                     case "Metrostation":
                         LoadScene(5);
+                        break;
+                    case "Intro":
+                        LoadScene(8);
                         break;
 					case "StartGame":
                         databaseManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<DatabaseManager>();

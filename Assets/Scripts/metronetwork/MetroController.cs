@@ -6,53 +6,53 @@ using UnityEngine;
 
 public class MetroController : MonoBehaviour
 {
-    private static GameObject instance;
+    private GameObject instance;
+    API_calls api;
+    CurrentUser currentUser;
+    public bool canMove;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        PositionFromInterestId(21);
- 
-        
-    }
+        api = GameObject.Find("Scripts").GetComponent<API_calls>();
+        getMetro();
 
-    // Update is called once per frame
- void Update()
-   {
+        //get start station from currentUser
+        currentUser = CurrentUser.getCurrentUser();
+        int startposition = currentUser.getStartStationID();
+        startPosition(startposition);
+        canMove = true;
 
-   }
-
- async void PositionFromInterestId(int id) {
-        //get metroId
-        //int metrofrominterestId = 1;
-        //get stationName
-        API_calls api = GameObject.Find("_SM").GetComponent<API_calls>();
-        StationModel station = await api.getStation(id);
-        Debug.Log(station);
-        string stationName = station.education.ToString();
-
-        // get position from station
-        Vector2 position = transform.position;
-        Vector2 newPosition = GameObject.Find(stationName).transform.position;       
-        transform.position = newPosition;
     }
 
 
-    void Awake()
+    //get Metro, if not existing create new object
+    public GameObject getMetro()
     {
-
-        DontDestroyOnLoad(transform.gameObject);
-
         if (instance == null)
         {
             instance = gameObject;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        return instance;
     }
+
+    //get startposition metro from id 
+    async void startPosition(int id)
+    {
+        Debug.Log("in startposition met id " + id);
+
+        StationModel station = await api.getStation(id);
+        string stationName = station.education.ToString();
+
+        // get position from station
+        Vector2 position = transform.position;
+        Vector2 newPosition = GameObject.Find(stationName).transform.position;
+
+        //transform
+        transform.position = newPosition;
+    }
+
 
 
 }

@@ -15,7 +15,7 @@ public class API_calls : MonoBehaviour
     //highscores
         public  Task<List<UserModel>> GetHighscores()
     {
-        var url = urlbase+"highscores/";
+        var url = urlbase+"highscores";
         var result =  apiHandler.Get<List<UserModel>>(url);
             return result;
     }
@@ -23,7 +23,7 @@ public class API_calls : MonoBehaviour
       //stations
     public Task<List<StationModel>> GetStations()
     {
-        var url = urlbase + "stations/";
+        var url = urlbase + "stations";
         var result = apiHandler.Get<List<StationModel>>(url);
         return result;
             }
@@ -49,7 +49,7 @@ public class API_calls : MonoBehaviour
     public Task<List<UserModel>>getUsers()
     {
   
-        var url = urlbase + "users/";
+        var url = urlbase + "users";
         var result =  apiHandler.Get<List<UserModel>>(url);
         return result;
 
@@ -63,28 +63,10 @@ public class API_calls : MonoBehaviour
         return result;
     }
 
-    //PUT user = > give the ID and new score
-    public Task updateUser(int userID, int newscore)
-    {
-        //get the user
-        UserModel user = getUser(userID).Result;
-        //update the score
-        user.score = newscore;
-
-        //start the put request
-        var url = urlbase + "user";
-        var result = apiHandler.Put(url, user );
-        return result;
-    }
 
     //PUT user = > given the user
     public Task updateUser(UserModel user)
     { 
-        //get the user
-        //UserModel user = getUser(userID).Result;
-        //update the score
-        //user.stationsVisited = stationsVisited;
-
         //start the put request
         var url = urlbase + "user";
         var result = apiHandler.Put(url, user);
@@ -112,6 +94,16 @@ public class API_calls : MonoBehaviour
         var result = apiHandler.PostVisit(url);
         return result;
     }
+
+    //get startstation when given interestID
+    public Task<StationModel> getStartStation(int interestID)
+    {
+        var url = urlbase + "startstation/" + interestID;
+        var result = apiHandler.Get<StationModel>(url);
+        return result;
+    }
+
+
 }
 
 
