@@ -18,8 +18,8 @@ public class CurrentUser : MonoBehaviour
         api = gameObject.GetComponent<API_calls>();
         getCurrentUser();
         setUser(1);
-        setCurrentStation(9);
-        setStartStationID(23);
+        setCurrentStation(1000);
+        setStartStationID(1011);
     }
 
     private CurrentUser()

@@ -98,9 +98,14 @@ public class API_calls : MonoBehaviour
     //get startstation when given interestID
     public Task<StationModel> getStartStation(int interestID)
     {
+        if (interestID == 9)
+        {
+           interestID = 1;
+        }
         var url = urlbase + "startstation/" + interestID;
         var result = apiHandler.Get<StationModel>(url);
-        return result;
+         return result;
+
     }
 
 
