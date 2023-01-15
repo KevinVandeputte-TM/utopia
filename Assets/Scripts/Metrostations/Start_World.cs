@@ -20,11 +20,13 @@ public class Start_World : MonoBehaviour
     public TextMeshProUGUI stationText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI questionText;
+    public TextMeshProUGUI nrQText;
     public GameObject UI_question;
     public List<QuestionModel> questionList;
     GameObject UIq;
     private CurrentUser currentUser;
     private int stationID;
+    private int nrQ;
 
 
 
@@ -51,7 +53,7 @@ public class Start_World : MonoBehaviour
         currentUser = CurrentUser.getCurrentUser();
         //stationID = 1000;
         stationID = CurrentUser.Instance.getCurrentStationID();
-        scoreText.text = "Score: ";
+        //scoreText.text = "Score: ";
         stationText.text = "Station";
 
         //get API SCRIPT OBJECT
@@ -99,6 +101,11 @@ public class Start_World : MonoBehaviour
             i++;
         }
 
+        //Setting up the number of questions
+        nrQ = questionList.Count;
+        Debug.Log("NUMBER OF QUESTIONS: " + nrQ.ToString());
+        nrQText.text = nrQ.ToString();
+
     }
 
     // Update is called once per frame
@@ -106,7 +113,7 @@ public class Start_World : MonoBehaviour
     {
         if (currentUser.getCurrentStation() != null && currentUser.getCurrentStationID()>0) {
             stationText.text = currentUser.getCurrentStation().education;
-            scoreText.text = "Score: " + currentUser.getUser().score.ToString();
+            scoreText.text = currentUser.getUser().score.ToString();
        }
         
     }
@@ -205,6 +212,12 @@ public class Start_World : MonoBehaviour
             player.Wrong();
         }
 
+        //Lower to nr of questions left
+        if(nrQ > 0){
+            nrQ -= 1;
+            nrQText.text = nrQ.ToString();
+        }
+        
         //reset player to !isBusy and canMove so he can move around and accept questions.
         player.isBusy = false; 
         player.canMove = true;
