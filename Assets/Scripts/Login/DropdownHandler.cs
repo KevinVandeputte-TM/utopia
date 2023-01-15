@@ -15,13 +15,13 @@ public class DropdownHandler : MonoBehaviour
 
         List<string> items = new List<string>();
         items.Add("-");
-        items.Add("2001");
-        items.Add("2002");
-        items.Add("2003");
-        items.Add("2004");
-        items.Add("2005");
-        items.Add("2006");
         items.Add("2007");
+        items.Add("2006");
+        items.Add("2005");
+        items.Add("2004");
+        items.Add("2003");
+        items.Add("2002");
+        items.Add("2001");
 
         foreach(var item in items)
         {

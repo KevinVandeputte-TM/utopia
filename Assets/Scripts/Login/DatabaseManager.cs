@@ -15,7 +15,7 @@ public class DatabaseManager : MonoBehaviour
 {
     private string playerName = "";
     private string birthyear = "";
-    private string interest = "-";
+    private string interest = "1";
     public Transform dropdownMenu;
     List<TMPro.TMP_Dropdown.OptionData> menuOptions;
 
@@ -55,6 +55,7 @@ public class DatabaseManager : MonoBehaviour
 
     public async void CreateUser(int SceneIndex) {
         await sn.addUser(playerName, int.Parse(birthyear), int.Parse(interest));
+
         //set current user properties
         int id = await getUserIDGivenNameAndBirthYear(playerName, int.Parse(birthyear));
         currentUser.setUser(id);
