@@ -26,13 +26,13 @@ public class StationController : MonoBehaviour
 
 
 	[Header("Dependencies")]
-	public GameObject metro;
 	public TextMeshProUGUI stationText;
 	public TextMeshProUGUI MetroLineText;
 	private bool isCurrentStation;
 	private API_calls api;
 	private Transition transition;
 	private CurrentUser currentUser;
+	private GameObject metro;
 	MetroController metroController;
 
 
@@ -43,6 +43,8 @@ public class StationController : MonoBehaviour
 		api = GameObject.Find("Scripts").GetComponent<API_calls>();
 		metroController = GameObject.Find("Metro").GetComponent<MetroController>();
 		currentUser = CurrentUser.getCurrentUser();
+		metro = GameObject.Find("/Metro");
+
 
 
 		if (stationID != 0)
