@@ -14,7 +14,6 @@ public class API_handler
 {
     public async Task<T> Get<T>(string url)
     {
-
         using var www = UnityWebRequest.Get(url);
         www.SetRequestHeader("Content-Type", "application/json");
         www.SetRequestHeader("Access-Control-Allow-Origin", "*");
@@ -71,7 +70,7 @@ public class API_handler
         www.Dispose();
     }
 
-    public async Task Post(string url, UserModel user)
+    public async Task<T> Post<T>(string url, UserModel user)
     {
         //user to json
         string json = JsonConvert.SerializeObject(user);
@@ -90,14 +89,18 @@ public class API_handler
         while (!operation.isDone)
             await Task.Yield();
 
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            Debug.Log(www.error);
+        var jsonResponse = www.downloadHandler.text;
+        try {
+            var result = JsonConvert.DeserializeObject<T>(jsonResponse);
+            Debug.Log($"Success:  {www.downloadHandler.text}");
+            return result;
         }
-        else
+        catch (Exception ex)
         {
-            Debug.Log("Upload complete!");
+            Debug.LogError($"{this} Could not parse response {ex.Message}");
+            return default;
         }
+
         www.Dispose();
     }
 

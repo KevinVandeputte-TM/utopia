@@ -26,7 +26,7 @@ public class API_calls : MonoBehaviour
         var url = urlbase + "stations";
         var result = apiHandler.Get<List<StationModel>>(url);
         return result;
-            }
+    }
     
     //questions/station_id
     public Task<List<QuestionModel>> GetQuestionsByStation(int stationID)
@@ -85,7 +85,7 @@ public class API_calls : MonoBehaviour
 
         //start the put request
         var url = urlbase + "user";
-        var result = apiHandler.Post(url, user);
+        var result = apiHandler.Post<UserModel>(url, user);
         return result;
     }
 
