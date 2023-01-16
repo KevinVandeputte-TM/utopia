@@ -3689,7 +3689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep in mind, once we arrive at the destination...
+  m_text: Denk eraan... Wanneer we straks toekomen op onze bestemming...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
   m_sharedMaterial: {fileID: -2880645926194240299, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
@@ -3829,7 +3829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Good luck!
+  m_text: Veel succes!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
   m_sharedMaterial: {fileID: -2880645926194240299, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
@@ -6826,7 +6826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hi there!  '
+  m_text: Hallo!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
   m_sharedMaterial: {fileID: -2880645926194240299, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
@@ -79891,7 +79891,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find and bump into the locals to play the game.
+  m_text: Dat je de andere personages zoekt... Loop tegen hen aan om de vraag te
+    tonen.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
   m_sharedMaterial: {fileID: -2880645926194240299, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
