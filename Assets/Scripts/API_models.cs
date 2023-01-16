@@ -32,7 +32,7 @@ public class QuestionModel
     public string fOne { get; set; }
     public string fTwo { get; set; }
     public string fThree { get; set; }
-    public StationModel station { get; set; }
+   // public StationModel station { get; set; }
 }
 
 [Serializable]
