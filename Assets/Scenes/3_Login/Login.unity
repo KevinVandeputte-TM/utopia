@@ -3828,7 +3828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ik wens geen interesse aan te duiden
+  m_Text: I have no specific interest
 --- !u!222 &1027828395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5111,7 +5111,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Interesse
+  m_Text: Interest
 --- !u!222 &1561831027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5306,7 +5306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gebruikersnaam
+  m_Text: Username
 --- !u!222 &1795783225
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5600,7 +5600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Geboortejaar
+  m_Text: Year of birth
 --- !u!222 &1907596280
 CanvasRenderer:
   m_ObjectHideFlags: 0
