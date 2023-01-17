@@ -30,7 +30,6 @@ public class StationController : MonoBehaviour
 	public TextMeshProUGUI MetroLineText;
 	private bool isCurrentStation;
 	private API_calls api;
-	private Stations stations;
 	private Transition transition;
 	private CurrentUser currentUser;
 	private GameObject metro;
@@ -42,14 +41,12 @@ public class StationController : MonoBehaviour
 	void Start()
 	{
 		//api = GameObject.Find("Scripts").GetComponent<API_calls>();
-		stations = GameObject.Find("Scripts").GetComponent<Stations>();
 		metroController = GameObject.Find("Metro").GetComponent<MetroController>();
 		currentUser = CurrentUser.GetCurrentUser();
 		metro = GameObject.Find("/Metro");
 		stationName = "halte";
 		metroLine = gameObject.tag;
 
-		//gameObject.SetActive(false);
 
 
 		if (stationID != 0)
@@ -57,7 +54,7 @@ public class StationController : MonoBehaviour
 			//station = await api.getStation(stationID);
 
 			//gameObject.SetActive(true);
-			station = stations.GetStation(1000);
+			station = currentUser.GetStationByID(stationID);
 		
 
 			if (station != null)

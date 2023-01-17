@@ -3206,7 +3206,6 @@ GameObject:
   - component: {fileID: 794299836}
   - component: {fileID: 794299838}
   - component: {fileID: 794299837}
-  - component: {fileID: 794299839}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -3255,19 +3254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitPanel: {fileID: 0}
   isMetroStation: 0
---- !u!114 &794299839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794299834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 896ef8c1e0099364fa293c83fa3dff61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stations: []
 --- !u!1001 &796982795
 PrefabInstance:
   m_ObjectHideFlags: 0

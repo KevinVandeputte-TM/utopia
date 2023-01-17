@@ -26,7 +26,7 @@ public class MetroController : MonoBehaviour
 
         //set loading scene
         Transform loadingscene = transform.Find("/LoadingScene");
-       // loadingscene.gameObject.SetActive(true);
+       loadingscene.gameObject.SetActive(true);
         
 
     }

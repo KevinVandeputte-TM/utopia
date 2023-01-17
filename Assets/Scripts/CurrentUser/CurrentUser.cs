@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CurrentUser : MonoBehaviour
 {
@@ -96,11 +97,19 @@ public class CurrentUser : MonoBehaviour
         return currentStation;
     }
 
+    //get the station by ID
+    public StationModel GetStationByID(int ID)
+    {
+        return stations.FirstOrDefault(station => station.stationID == ID);
+    }
+
     //get currentstation ID
     public int GetCurrentStationID()
     {
         return currentStation.stationID;
     }
+
+
 
     //getScore
     public int GetScore()
@@ -126,6 +135,7 @@ public class CurrentUser : MonoBehaviour
     {
         return startStationID;
     }
+
 
     async void SetStations() {
         stations = await api.GetStations();
