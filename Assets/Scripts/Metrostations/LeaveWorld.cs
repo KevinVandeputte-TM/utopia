@@ -85,14 +85,18 @@ public class LeaveWorld : MonoBehaviour
         if (collision.gameObject.name == "Entrance")
         {
             
-            if (player != null && !player.isBusy)
+            if (player != null && !player.isBusy && !player.canLeave)
             {
                 //show exitpanel
                 exitPanel.SetActive(true);
                 //Set player busy 
                 player.isBusy = true;
                 player.canMove = false;
-               
+               //if level is completed let player leave without need to show panel
+            } else if(player != null && !player.isBusy && player.canLeave){
+                CurrentUser.Instance.SetCurrentStation(0);
+                transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
+                transition.LoadLevel(4);
             }
 
         }

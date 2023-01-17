@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     float vertical;
     public float speed = 3.0f;
     public bool isBusy;
-
     public bool canMove = true;
+    public bool canLeave;
 
 
     //For Animations

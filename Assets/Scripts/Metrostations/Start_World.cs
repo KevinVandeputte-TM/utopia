@@ -27,6 +27,7 @@ public class Start_World : MonoBehaviour
     private CurrentUser currentUser;
     private int stationID;
     private int nrQ;
+    Notification notification;
 
 
 
@@ -103,8 +104,10 @@ public class Start_World : MonoBehaviour
 
         //Setting up the number of questions
         nrQ = questionList.Count;
-        Debug.Log("NUMBER OF QUESTIONS: " + nrQ.ToString());
         nrQText.text = nrQ.ToString();
+
+        //selecting the notification
+        notification = GameObject.Find("/UI_Information/Notification").GetComponent<Notification>();
 
     }
 
@@ -216,6 +219,12 @@ public class Start_World : MonoBehaviour
         if(nrQ > 0){
             nrQ -= 1;
             nrQText.text = nrQ.ToString();
+        }
+
+        //Show notification when level completed
+        if(nrQ == 0){
+            notification.Notify("Level voltooid!", "KEER TERUG NAAR DE METRO");
+            player.canLeave = true;
         }
         
         //reset player to !isBusy and canMove so he can move around and accept questions.
