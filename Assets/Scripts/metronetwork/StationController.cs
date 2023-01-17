@@ -38,35 +38,44 @@ public class StationController : MonoBehaviour
 
 
 	// Start is called before the first frame update
-	async void Start()
+	void Start()
 	{
-		api = GameObject.Find("Scripts").GetComponent<API_calls>();
+		//api = GameObject.Find("Scripts").GetComponent<API_calls>();
 		metroController = GameObject.Find("Metro").GetComponent<MetroController>();
-		currentUser = CurrentUser.getCurrentUser();
+		currentUser = CurrentUser.GetCurrentUser();
 		metro = GameObject.Find("/Metro");
+		stationName = "halte";
+		metroLine = gameObject.tag;
 
 
 
 		if (stationID != 0)
 		{
-			station = await api.getStation(stationID);
-			stationName = station.education.ToString();
-			gameObject.name = stationName;
+			//station = await api.getStation(stationID);
 
-			if (isAvailable)
+			//gameObject.SetActive(true);
+			station = currentUser.GetStationByID(stationID);
+		
+
+			if (station != null)
 			{
-				gameObject.GetComponent<Renderer>().material.color = new Color(73/250f, 160/250f, 118/250f);
-				Vector3 objectScale = transform.localScale;
-				transform.localScale = new Vector3(objectScale.x * 1.5f, objectScale.y * 1.5f, objectScale.z * 1.5f);
+				stationName = station.education.ToString();
+				gameObject.name = stationName;
+
+				if (isAvailable)
+				{
+					gameObject.GetComponent<Renderer>().material.color = new Color(73 / 250f, 160 / 250f, 118 / 250f);
+					Vector3 objectScale = transform.localScale;
+					transform.localScale = new Vector3(objectScale.x * 1.5f, objectScale.y * 1.5f, objectScale.z * 1.5f);
+				}
+			}
+			else
+			{
+				stationName = "halte";
 			}
 		}
+		
 
-		else
-		{
-			stationName = "halte";
-		}
-
-		metroLine = gameObject.tag;
 
 	}
 
@@ -74,69 +83,71 @@ public class StationController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (isVisited)
-		{
-			gameObject.GetComponent<Renderer>().material.color = new Color(0, 250, 0);
-
-		}
-
-		if (metro.transform.position == transform.position)
-		{
-			isCurrentStation = true;
-		}
-		else
-		{
-			isCurrentStation = false;
-		}
-		metro.SetActive(true);
-
-		if (isCurrentStation)
-		{
-			stationText.text = stationName.ToUpper();
-			MetroLineText.text = metroLine;
-
-			if (metroController.canMove)
+		
+			if (isVisited)
 			{
+				gameObject.GetComponent<Renderer>().material.color = new Color(0, 250, 0);
 
-				if (Input.GetAxis("Vertical") > 0 & (upDestination != null))
-				{
-					isCurrentStation = false;
-					StartCoroutine(Movemetro(upDestination));
-					StartCoroutine(MetroVertical());
-				}
+			}
 
-				else if (Input.GetAxis("Horizontal") > 0 && (rightDestination != null))
-				{
-					isCurrentStation = false;
-					StartCoroutine(Movemetro(rightDestination));
-					StartCoroutine(MetroHorizontal());
+			if (metro.transform.position == transform.position)
+			{
+				isCurrentStation = true;
+			}
+			else
+			{
+				isCurrentStation = false;
+			}
+			metro.SetActive(true);
 
-				}
-				else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
-				{
-					isCurrentStation = false;
-					StartCoroutine(Movemetro(downDestination));
-					StartCoroutine(MetroVertical());
-				}
-				else if (Input.GetAxis("Horizontal") < 0 && (leftDestination != null))
-				{
-					isCurrentStation = false;
-					StartCoroutine(Movemetro(leftDestination));
-					StartCoroutine(MetroHorizontal());
-				}
-
+			if (isCurrentStation)
+			{
+			
+				stationText.text = stationName.ToUpper();
+				MetroLineText.text = metroLine;
 			
 
-			if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != 0))
-			{
-				currentUser.setCurrentStation(stationID);
-				currentUser.setStartStationID(stationID);
-				transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
-				transition.LoadLevel(world);
+				if (metroController.canMove)
+				{
 
-			}
-			}
+					if (Input.GetAxis("Vertical") > 0 & (upDestination != null))
+					{
+						isCurrentStation = false;
+						StartCoroutine(Movemetro(upDestination));
+						StartCoroutine(MetroVertical());
+					}
 
+					else if (Input.GetAxis("Horizontal") > 0 && (rightDestination != null))
+					{
+						isCurrentStation = false;
+						StartCoroutine(Movemetro(rightDestination));
+						StartCoroutine(MetroHorizontal());
+
+					}
+					else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
+					{
+						isCurrentStation = false;
+						StartCoroutine(Movemetro(downDestination));
+						StartCoroutine(MetroVertical());
+					}
+					else if (Input.GetAxis("Horizontal") < 0 && (leftDestination != null))
+					{
+						isCurrentStation = false;
+						StartCoroutine(Movemetro(leftDestination));
+						StartCoroutine(MetroHorizontal());
+					}
+
+
+
+					if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != 0))
+					{
+						currentUser.SetCurrentStation(stationID);
+						currentUser.SetStartStationID(stationID);
+						transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
+						transition.LoadLevel(world);
+
+					}
+				}
 		}
 
 	}
@@ -178,6 +189,22 @@ public class StationController : MonoBehaviour
 		}
 
 	}
+
+	/*float HexToFloat(string hex)
+    {
+		float result = System.Convert.ToInt32(hex, 16) / 255f;
+		return result ;
+    }
+
+	private Color GetColorFromString(string hex)
+    {
+		float red = HexToFloat(hex.substring(0, 2));
+		float green = HexToFloat(hex.substring(2, 4));
+		float blue = HexToFloat(hex.substring(4, 6));
+
+		return new Color();
+	
+	}*/
 
 
 

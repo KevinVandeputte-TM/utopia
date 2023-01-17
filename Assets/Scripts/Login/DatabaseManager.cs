@@ -32,7 +32,7 @@ public class DatabaseManager : MonoBehaviour
         menuOptions = dropdownMenu.GetComponent<TMPro.TMP_Dropdown>().options;
 
         sn = gameObject.GetComponent<API_calls>();
-        currentUser = CurrentUser.getCurrentUser();
+        currentUser = CurrentUser.GetCurrentUser();
 
     }
 
@@ -58,9 +58,9 @@ public class DatabaseManager : MonoBehaviour
 
         //set current user properties
         int id = await getUserIDGivenNameAndBirthYear(playerName, int.Parse(birthyear));
-        currentUser.setUser(id);
+        currentUser.SetUser(id);
         StationModel startstation = await sn.getStartStation(int.Parse(interest));
-        currentUser.setStartStationID(startstation.stationID);
+        currentUser.SetStartStationID(startstation.stationID);
 
         SceneManager.LoadScene(SceneIndex);
     }

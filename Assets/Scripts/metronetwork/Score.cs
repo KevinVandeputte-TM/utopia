@@ -10,15 +10,15 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentUser = CurrentUser.getCurrentUser();
+        currentUser = CurrentUser.GetCurrentUser();
 
     }
 
     void Update()
     {
-        if (currentUser.getUser() != null)
+        if (currentUser.GetUser() != null)
         {
-            scoreText.text = "Score: " + currentUser.getUser().score.ToString();
+            scoreText.text = currentUser.GetUser().score.ToString();
 
         }
 

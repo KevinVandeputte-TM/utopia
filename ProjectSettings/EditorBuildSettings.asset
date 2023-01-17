@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/8_Intro/Intro.unity
     guid: 1cefc93520d5631418a3b28451524f72
+  - enabled: 1
+    path: Assets/Scenes/5_Metrostations/Sport/Sport.unity
+    guid: 617ecf10828ffcc44a2cdbb59c583aa1
   - enabled: 0
     path: Assets/Scenes/Archive/Login.unity
     guid: affd712bddf3be54c9f336e0f23630fc

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CurrentUser : MonoBehaviour
 {
@@ -10,16 +11,19 @@ public class CurrentUser : MonoBehaviour
     private StationModel currentStation;
     private int score;
     private int startStationID;
+    private List<StationModel> stations;
+
 
     //when start of scene get the current user
     //for testing set default user, currentstation and startstationID
-    void Start()
+    async void Start()
     {
         api = gameObject.GetComponent<API_calls>();
-        getCurrentUser();
-        setUser(1);
-        setCurrentStation(1000);
-        setStartStationID(1011);
+        GetCurrentUser();
+        SetUser(1);
+        SetCurrentStation(1000);
+        SetStartStationID(1011);
+        SetStations();
     }
 
     private CurrentUser()
@@ -28,7 +32,7 @@ public class CurrentUser : MonoBehaviour
     } 
 
     // create the current user
-    public static CurrentUser getCurrentUser() {
+    public static CurrentUser GetCurrentUser() {
         if (Instance == null) { 
             Instance = new CurrentUser();
         }
@@ -45,22 +49,21 @@ public class CurrentUser : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    
+
     //set the user to the user logged in
-    async public void setUser(int id)
+    public async void SetUser(int id)
     {
         user = await api.getUser(id);
-        Debug.Log(user);
     }
 
     // get logged in user
-    public UserModel getUser()
+    public UserModel GetUser()
     {
         return user;
     }
 
     //set the station currently visited + add visited station to the list
-    async public void setCurrentStation(int id) {
+    public async void SetCurrentStation(int id) {
         //id>0: add visited station to list 
         if (id > 0)
         {
@@ -89,40 +92,63 @@ public class CurrentUser : MonoBehaviour
     }
 
     //get the station currently visiting
-    public StationModel getCurrentStation()
+    public StationModel GetCurrentStation()
     {
         return currentStation;
     }
 
+    //get the station by ID
+    public StationModel GetStationByID(int ID)
+    {
+        return stations.FirstOrDefault(station => station.stationID == ID);
+    }
+
     //get currentstation ID
-    public int getCurrentStationID()
+    public int GetCurrentStationID()
     {
         return currentStation.stationID;
     }
 
+
+
     //getScore
-    public int getScore()
+    public int GetScore()
     {
         return user.score;
     }
 
     //update score
-    async public void setScore ()
+    public async void SetScore ()
     {
         this.user.score += 1 ;
         await api.updateUser(this.user);
     }
 
     //set StartStation for metro in metroNetwork
-    public void setStartStationID(int id)
+    public void SetStartStationID(int id)
     {
         startStationID = id;
 
     }
 
-    public int getStartStationID()
+    public int GetStartStationID()
     {
         return startStationID;
+    }
+
+
+    async void SetStations() {
+        stations = await api.GetStations();
+    }
+
+    public List<StationModel> GetStations()
+    {
+        if(stations.Count == 0)
+        {
+            SetStations();
+
+        }
+        return stations;
     }
 
 
