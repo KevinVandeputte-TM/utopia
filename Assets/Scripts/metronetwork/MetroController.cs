@@ -16,19 +16,24 @@ public class MetroController : MonoBehaviour
     void Start()
     {
         api = GameObject.Find("Scripts").GetComponent<API_calls>();
-        getMetro();
+        GetMetro();
 
         //get start station from currentUser
-        currentUser = CurrentUser.getCurrentUser();
-        int startposition = currentUser.getStartStationID();
-        startPosition(startposition);
+        currentUser = CurrentUser.GetCurrentUser();
+        int startposition = currentUser.GetStartStationID();
+        StartPosition(1000);
         canMove = true;
+
+        //set loading scene
+        Transform loadingscene = transform.Find("/LoadingScene");
+       // loadingscene.gameObject.SetActive(true);
+        
 
     }
 
 
     //get Metro, if not existing create new object
-    public GameObject getMetro()
+    public GameObject GetMetro()
     {
         if (instance == null)
         {
@@ -38,10 +43,8 @@ public class MetroController : MonoBehaviour
     }
 
     //get startposition metro from id 
-    async void startPosition(int id)
+    async void StartPosition(int id)
     {
-        Debug.Log("in startposition met id " + id);
-
         StationModel station = await api.getStation(id);
         string stationName = station.education.ToString();
 

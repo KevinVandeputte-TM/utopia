@@ -50,9 +50,9 @@ public class Start_World : MonoBehaviour
 
 
         //get currentUser, stationID, stationText;
-        currentUser = CurrentUser.getCurrentUser();
+        currentUser = CurrentUser.GetCurrentUser();
         //stationID = 1000;
-        stationID = CurrentUser.Instance.getCurrentStationID();
+        stationID = CurrentUser.Instance.GetCurrentStationID();
         //scoreText.text = "Score: ";
         stationText.text = "Station";
 
@@ -111,9 +111,9 @@ public class Start_World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentUser.getCurrentStation() != null && currentUser.getCurrentStationID()>0) {
-            stationText.text = currentUser.getCurrentStation().education;
-            scoreText.text = currentUser.getUser().score.ToString();
+        if (currentUser.GetCurrentStation() != null && currentUser.GetCurrentStationID()>0) {
+            stationText.text = currentUser.GetCurrentStation().education;
+            scoreText.text = currentUser.GetUser().score.ToString();
        }
         
     }
@@ -205,7 +205,7 @@ public class Start_World : MonoBehaviour
         /* answer logic */
         //if answer is correct    
         if(myanswer){
-            currentUser.setScore();
+            currentUser.SetScore();
             player.Celebrate();
             // if wrong answer
         } else {

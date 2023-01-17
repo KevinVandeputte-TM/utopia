@@ -104,7 +104,7 @@ public class LeaveWorld : MonoBehaviour
         // leave metrostation
         if (choice == 1)
         {
-           CurrentUser.Instance.setCurrentStation(0);
+           CurrentUser.Instance.SetCurrentStation(0);
            transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
            transition.LoadLevel(indexToNavigateTo);
 
