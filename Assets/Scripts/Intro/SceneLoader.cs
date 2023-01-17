@@ -6,11 +6,14 @@ public class SceneLoader : MonoBehaviour
 {
 
     private Transition transition;
+    [Header("Index van scene om naar toe te gaan:")]
+    public int index;
     
     //when enabled
     void OnEnable(){
         //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-        LoadScene(0);
+        //LoadScene(0);
+       LoadScene(index);
     }
 
     	void LoadScene(int sceneIndex)
