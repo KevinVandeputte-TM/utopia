@@ -74,7 +74,7 @@ public class API_calls : MonoBehaviour
     }
 
     //POST = > users/user_id
-    public Task addUser(string name, int birthyear, int interestID)
+    public Task<UserModel> addUser(string name, int birthyear, int interestID)
     {
         //get the user
         UserModel user = new UserModel();

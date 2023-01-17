@@ -54,29 +54,15 @@ public class DatabaseManager : MonoBehaviour
     }
 
     public async void CreateUser(int SceneIndex) {
-        await sn.addUser(playerName, int.Parse(birthyear), int.Parse(interest));
-
+        //create user & catch created user
+        UserModel user = await sn.addUser(playerName, int.Parse(birthyear), int.Parse(interest));
         //set current user properties
-        int id = await getUserIDGivenNameAndBirthYear(playerName, int.Parse(birthyear));
-        currentUser.SetUser(id);
+        
+        currentUser.SetUser(user.userID);
         StationModel startstation = await sn.getStartStation(int.Parse(interest));
         currentUser.SetStartStationID(startstation.stationID);
 
         SceneManager.LoadScene(SceneIndex);
     }
 
-    //get logged in user from list of users
-    async Task<int> getUserIDGivenNameAndBirthYear(string name, int birthyear)
-    {
-        int result = 0;
-        List<UserModel> users = await sn.getUsers();
-        foreach (UserModel user in users)
-        {
-            if (result == 0 && user.name.Equals(name) && user.birthyear == birthyear)
-            {
-                result = user.userID;
-            }
-        }
-        return result;
-    }
 }

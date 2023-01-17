@@ -55,7 +55,7 @@ public class MenuButton : MonoBehaviour
 					case "StartGame":
                         databaseManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<DatabaseManager>();
 
-                        databaseManager.CreateUser(4);
+                        databaseManager.CreateUser(10);
                      
                         break;
                     default:

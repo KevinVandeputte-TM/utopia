@@ -16,21 +16,15 @@ public class MetroController : MonoBehaviour
     void Start()
     {
         api = GameObject.Find("Scripts").GetComponent<API_calls>();
-        GetMetro();
+        //GetMetro();
 
         //get start station from currentUser
         currentUser = CurrentUser.GetCurrentUser();
         int startposition = currentUser.GetStartStationID();
-        StartPosition(1000);
+        StartPosition(startposition);
         canMove = true;
 
-        //set loading scene
-        Transform loadingscene = transform.Find("/LoadingScene");
-       loadingscene.gameObject.SetActive(true);
-        
-
     }
-
 
     //get Metro, if not existing create new object
     public GameObject GetMetro()
