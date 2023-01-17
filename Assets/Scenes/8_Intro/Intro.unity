@@ -181,9 +181,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ladies and gentlemen,
+  m_text: 'Dames en heren,
 
-    this is your captain speaking.'
+    hier spreekt uw kapitein'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 663061cf872724d4697783138760725e, type: 2}
   m_sharedMaterial: {fileID: 462077203875916958, guid: 663061cf872724d4697783138760725e, type: 2}
@@ -318,9 +318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'On behalf of the entire crew,
-
-    we wish you a pleasant visit.'
+  m_text: "Namens de hele crew wensen \nwij u een aangenaam verblijf."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 663061cf872724d4697783138760725e, type: 2}
   m_sharedMaterial: {fileID: 462077203875916958, guid: 663061cf872724d4697783138760725e, type: 2}
@@ -455,9 +453,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'We started our descend
+  m_text: 'Zoals u merkt hebben we
 
-    into Utopia.'
+    de daling ingezet naar Utopia'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 663061cf872724d4697783138760725e, type: 2}
   m_sharedMaterial: {fileID: 462077203875916958, guid: 663061cf872724d4697783138760725e, type: 2}
@@ -1371,9 +1369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Make sure to visit the
-
-    Human Recourses district.'
+  m_text: "bezoek zeker het \nHuman Resources district."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 663061cf872724d4697783138760725e, type: 2}
   m_sharedMaterial: {fileID: 462077203875916958, guid: 663061cf872724d4697783138760725e, type: 2}
