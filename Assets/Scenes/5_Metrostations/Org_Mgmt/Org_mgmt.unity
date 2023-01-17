@@ -294,10 +294,10 @@ RectTransform:
   m_Father: {fileID: 1448887863}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 244.1518, y: -73}
-  m_SizeDelta: {x: 450.2908, y: 128.9498}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -64.4749}
+  m_SizeDelta: {x: 600, y: 128.9498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &34493626
 MonoBehaviour:
@@ -353,8 +353,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3268,11 +3268,11 @@ GameObject:
   m_Component:
   - component: {fileID: 859655543}
   - component: {fileID: 859655549}
-  - component: {fileID: 859655548}
   - component: {fileID: 859655547}
   - component: {fileID: 859655546}
   - component: {fileID: 859655550}
   - component: {fileID: 859655544}
+  - component: {fileID: 859655548}
   m_Layer: 5
   m_Name: Button_ja
   m_TagString: Untagged
@@ -3296,10 +3296,10 @@ RectTransform:
   m_Father: {fileID: 1448887863}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107, y: -68.2}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 150, y: -47}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859655544
 MonoBehaviour:
@@ -3356,13 +3356,13 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.050980397, g: 0.121568635, b: 0.1764706, a: 1}
+    m_HighlightedColor: {r: 0.21960786, g: 0.43921572, b: 0.78823537, a: 1}
+    m_PressedColor: {r: 0.050980397, g: 0.121568635, b: 0.1764706, a: 1}
+    m_SelectedColor: {r: 0.21960786, g: 0.43921572, b: 0.78823537, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.5
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -3378,19 +3378,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 859655548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LeaveWorld, Assembly-CSharp
-        m_MethodName: onUserClickYesNo
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &859655548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3404,7 +3392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.050980393, g: 0.12156863, b: 0.1764706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3689,7 +3677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Denk eraan... Wanneer we straks toekomen op onze bestemming...
+  m_text: 'Denk eraan... '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
   m_sharedMaterial: {fileID: -2880645926194240299, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
@@ -6080,8 +6068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 153, y: 15}
-  m_SizeDelta: {x: 672.4844, y: 419.7244}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448887864
 MonoBehaviour:
@@ -6244,11 +6232,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1457544396}
   - component: {fileID: 1457544402}
-  - component: {fileID: 1457544401}
   - component: {fileID: 1457544400}
   - component: {fileID: 1457544398}
   - component: {fileID: 1457544403}
   - component: {fileID: 1457544397}
+  - component: {fileID: 1457544401}
   m_Layer: 5
   m_Name: Button_neen
   m_TagString: Untagged
@@ -6272,10 +6260,10 @@ RectTransform:
   m_Father: {fileID: 1448887863}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 105, y: -68.8}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -150, y: -47}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457544397
 MonoBehaviour:
@@ -6332,13 +6320,13 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.050980397, g: 0.121568635, b: 0.1764706, a: 1}
+    m_HighlightedColor: {r: 0.21960786, g: 0.43921572, b: 0.78823537, a: 1}
+    m_PressedColor: {r: 0.050980397, g: 0.121568635, b: 0.1764706, a: 1}
+    m_SelectedColor: {r: 0.21960786, g: 0.43921572, b: 0.78823537, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.5
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -6380,7 +6368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.050980393, g: 0.12156863, b: 0.1764706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -79891,8 +79879,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dat je de andere personages zoekt... Loop tegen hen aan om de vraag te
-    tonen.
+  m_text: Zoek de personages en speel zo de vragen vrij.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
   m_sharedMaterial: {fileID: -2880645926194240299, guid: 85292244cd7d91c49a49cf7708937bde, type: 2}
