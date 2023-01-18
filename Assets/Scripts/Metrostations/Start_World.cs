@@ -114,6 +114,7 @@ public class Start_World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //set score and name station
         if (currentUser.GetCurrentStation() != null && currentUser.GetCurrentStationID()>0) {
             stationText.text = currentUser.GetCurrentStation().education;
             scoreText.text = currentUser.GetUser().score.ToString();

@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/5_Metrostations/Metrostation 1.unity
     guid: 5b453ee9b4619424fb98c9bbaef6e758
   - enabled: 1
-    path: Assets/Scenes/5_Metrostations/6_Org_Mgmt/Org_mgmt.unity
+    path: Assets/Scenes/5_Metrostations/Org_Mgmt/Org_mgmt.unity
     guid: 766d548633e34b345ad695e801a3d4d8
   - enabled: 1
     path: Assets/Scenes/0_7_StartScreen/StartScreen.unity
