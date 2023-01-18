@@ -1317,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4488415097345711860, guid: fa649eb8948f0414d92872175d6d7ef6, type: 3}
       propertyPath: m_Name
-      value: Toegepast Psychologie
+      value: Toegepaste Psychologie
       objectReference: {fileID: 0}
     - target: {fileID: 4488415097345711860, guid: fa649eb8948f0414d92872175d6d7ef6, type: 3}
       propertyPath: m_TagString
@@ -3838,7 +3838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4488415097345711860, guid: fa649eb8948f0414d92872175d6d7ef6, type: 3}
       propertyPath: m_Name
-      value: Ontwerp en Prooductietechnologie
+      value: Ontwerp en Productietechnologie
       objectReference: {fileID: 0}
     - target: {fileID: 4488415097345711860, guid: fa649eb8948f0414d92872175d6d7ef6, type: 3}
       propertyPath: m_TagString
