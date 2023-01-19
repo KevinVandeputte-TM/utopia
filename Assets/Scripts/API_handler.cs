@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 using System;
 using System.Threading.Tasks;
-using UnityEngine;
 using UnityEngine.Networking;
-using System.Linq;
 using System.Text;
 
 
@@ -31,12 +27,12 @@ public class API_handler
         {
             //  JSON to .net object
             var result = JsonConvert.DeserializeObject<T>(jsonResponse);
-            Debug.Log($"Success:  {www.downloadHandler.text}");
+          //  Debug.Log($"Success:  {www.downloadHandler.text}");
             return result;
         }
         catch (Exception ex)
         {
-            Debug.LogError($"{this} Could not parse response {ex.Message}");
+          //  Debug.LogError($"{this} Could not parse response {ex.Message}");
             return default;
         }
     }
@@ -59,14 +55,7 @@ public class API_handler
         while (!operation.isDone)
             await Task.Yield();
 
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            Debug.Log(www.error);
-        }
-        else
-        {
-            Debug.Log("Upload complete!");
-        }
+
         www.Dispose();
     }
 
@@ -92,12 +81,12 @@ public class API_handler
         var jsonResponse = www.downloadHandler.text;
         try {
             var result = JsonConvert.DeserializeObject<T>(jsonResponse);
-            Debug.Log($"Success:  {www.downloadHandler.text}");
+         //  Debug.Log($"Success:  {www.downloadHandler.text}");
             return result;
         }
         catch (Exception ex)
         {
-            Debug.LogError($"{this} Could not parse response {ex.Message}");
+           // Debug.LogError($"{this} Could not parse response {ex.Message}");
             return default;
         }
 
@@ -114,14 +103,6 @@ public class API_handler
         while (!operation.isDone)
             await Task.Yield();
 
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            Debug.Log(www.error);
-        }
-        else
-        {
-            Debug.Log("Upload complete!");
-        }
         www.Dispose();
     }
 }

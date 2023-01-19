@@ -1,11 +1,8 @@
-using System.Collections;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.Playables;
+
 
 public class Start_World : MonoBehaviour
 {
@@ -43,13 +40,6 @@ public class Start_World : MonoBehaviour
         loadingcanvas.gameObject.SetActive(true);
 
 
-        //information UI -with scores
-       // Transform informationObject = transform.Find("/UI_Information");
-      //  informationObject.gameObject.SetActive(false);
-
-
-
-
         //get currentUser, stationID, stationText;
         currentUser = CurrentUser.GetCurrentUser();
         //stationID = 1000;
@@ -63,18 +53,8 @@ public class Start_World : MonoBehaviour
         //api call to get questions
         questionList = await sn.GetQuestionsByStation(stationID);
 
-        //if questions are fetch = stop loading anime
-        if (questionList.Count > 0)
-        {
-           // informationObject.gameObject.SetActive(true);
-            //show loading when questionlist is empty
-            // loadingcanvas.gameObject.SetActive(true);
-        }
-
-
-
-
-
+     
+     
         //array of colors for character
         SpriteLibraryAsset[] listOfColors= { color1, color2, color3, color4, color5 };
 

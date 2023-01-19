@@ -1060,11 +1060,11 @@ GameObject:
   m_Component:
   - component: {fileID: 286866444}
   - component: {fileID: 286866450}
+  - component: {fileID: 286866445}
   - component: {fileID: 286866449}
   - component: {fileID: 286866448}
   - component: {fileID: 286866447}
   - component: {fileID: 286866446}
-  - component: {fileID: 286866445}
   m_Layer: 5
   m_Name: Button_neen
   m_TagString: Untagged
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.050980397, g: 0.121568635, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286866443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -16352,11 +16352,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1569908561}
   - component: {fileID: 1569908567}
+  - component: {fileID: 1569908562}
   - component: {fileID: 1569908566}
   - component: {fileID: 1569908565}
   - component: {fileID: 1569908564}
   - component: {fileID: 1569908563}
-  - component: {fileID: 1569908562}
   m_Layer: 5
   m_Name: Button_ja
   m_TagString: Untagged
@@ -16398,7 +16398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.050980397, g: 0.121568635, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16475,7 +16475,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569908560}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class AnswerButton : MonoBehaviour
 {
@@ -36,19 +34,20 @@ public class AnswerButton : MonoBehaviour
         {
             //if index is same as controller index play selected animation
             animator.SetBool("selected", true);
+
             //When hit submit execute animation
             if(Input.GetAxis ("Submit") == 1 && correctanswer){
                 animator.SetBool("pressed", true);
                 animator.SetBool("correct", true);
+
             // to avoid multiple firing of TaskOnClick
             // if pressed then set to false and execute TaskOnClick
             }else if(Input.GetAxis ("Submit") == 1 && !correctanswer){
                 animator.SetBool("pressed", true);
                 animator.SetBool("wrong", true);
+
             }else if (animator.GetBool ("pressed")){
 				animator.SetBool("pressed", false);
-                //animator.SetBool("correct", false);
-                //animator.SetBool("wrong", false);
 				answerAnimatorFunctions.disableOnce = true;
                 TaskOnClick();
             }
