@@ -25,13 +25,14 @@ public class CurrentUser : MonoBehaviour
         SetStartStationID(1011);
         SetStations();
     }
-
+    
+    //constructor
     private CurrentUser()
     {
 
     } 
 
-    // create the current user
+    // create the current user object when not existing
     public static CurrentUser GetCurrentUser() {
         if (Instance == null) { 
             Instance = new CurrentUser();
@@ -78,12 +79,12 @@ public class CurrentUser : MonoBehaviour
             {
                 newList = oldList;
                 newList.Add(id);
-
             }
             user.stationsVisited = newList;
+            //update database
             await api.updateUser(user);
         }
-        //id = 0, reset current station 
+        //id = 0, reset current station (when returning to network)
         else
         {
             currentStation = null;
@@ -131,22 +132,24 @@ public class CurrentUser : MonoBehaviour
 
     }
 
+    //get start station ID
     public int GetStartStationID()
     {
         return startStationID;
     }
 
-
+    // set stations 
     async void SetStations() {
+        //get stations forom database
         stations = await api.GetStations();
     }
 
+    //get stations
     public List<StationModel> GetStations()
     {
         if(stations.Count == 0)
         {
             SetStations();
-
         }
         return stations;
     }

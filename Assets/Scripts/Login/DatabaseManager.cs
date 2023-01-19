@@ -56,12 +56,13 @@ public class DatabaseManager : MonoBehaviour
     public async void CreateUser(int SceneIndex) {
         //create user & catch created user
         UserModel user = await sn.addUser(playerName, int.Parse(birthyear), int.Parse(interest));
-        //set current user properties
         
+        //set current user properties
         currentUser.SetUser(user.userID);
         StationModel startstation = await sn.getStartStation(int.Parse(interest));
         currentUser.SetStartStationID(startstation.stationID);
 
+        //go to next scene
         SceneManager.LoadScene(SceneIndex);
     }
 
