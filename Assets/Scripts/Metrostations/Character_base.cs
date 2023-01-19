@@ -25,8 +25,6 @@ public class Character_base : MonoBehaviour
     void Start()
     {
 
-       // UI_question = GameObject.Find("UI_question");
-        //UI_question.SetActive(false);
         //instantiate the worldControl Object
         scripts = GameObject.Find("Scripts");
         worldControl = scripts.GetComponent<Start_World>();
@@ -40,7 +38,7 @@ public class Character_base : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    //collition between character and player
     void OnTriggerEnter2D(Collider2D collider)
     {
        PlayerController player = collider.gameObject.GetComponent<PlayerController>();

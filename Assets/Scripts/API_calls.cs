@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -88,7 +87,7 @@ public class API_calls : MonoBehaviour
         var result = apiHandler.Post<UserModel>(url, user);
         return result;
     }
-
+    //add visited station to visited point 
     public Task addVisit(int stationID, int interestID) {
         var url = urlbase + "visit?stationID=" + stationID + "&interestID=" + interestID;
         var result = apiHandler.PostVisit(url);

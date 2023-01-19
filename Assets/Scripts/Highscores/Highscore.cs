@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
 [RequireComponent(typeof(API_calls))]
 public class Highscore : MonoBehaviour
 {
@@ -35,15 +30,12 @@ public class Highscore : MonoBehaviour
         if (highscoreList != null)
         {
             //hide loading text
-       
           loadingtext.gameObject.SetActive(false);
             //show tabletitles
-         
             titletable.gameObject.SetActive(true);
         }
 
         //make copies and fill in the text
-
         float templateHeight = 100f;
 
         entryTemplate.gameObject.SetActive(false);
@@ -63,13 +55,10 @@ public class Highscore : MonoBehaviour
             textNumberT.text = (i+1).ToString();
 
 
-            //   Debug.Log(textNumber);
-
             //Text_Highscore Score;
             Transform textScore = entryTransform.GetChild(1);
             Text textScoreT = textScore.GetComponent<Text>();
             textScoreT.text = highscoreList[i].score.ToString();
-           // textScoreT.text = "SCORE" + i;
        
 
            // Text_Highscore Username;
