@@ -16,7 +16,7 @@ public class CurrentUser : MonoBehaviour
 
     //when start of scene get the current user
     //for testing set default user, currentstation and startstationID
-    async void Start()
+     void Start()
     {
         api = gameObject.GetComponent<API_calls>();
         GetCurrentUser();
@@ -101,7 +101,7 @@ public class CurrentUser : MonoBehaviour
     //get the station by ID
     public StationModel GetStationByID(int ID)
     {
-        return stations.FirstOrDefault(station => station.stationID == ID);
+        return stations.Find(station => station.stationID == ID);
     }
 
     //get currentstation ID

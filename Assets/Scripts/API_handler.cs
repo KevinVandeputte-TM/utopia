@@ -79,9 +79,11 @@ public class API_handler
             await Task.Yield();
 
         var jsonResponse = www.downloadHandler.text;
+        www.Dispose();
         try {
             var result = JsonConvert.DeserializeObject<T>(jsonResponse);
-         //  Debug.Log($"Success:  {www.downloadHandler.text}");
+            //  Debug.Log($"Success:  {www.downloadHandler.text}");
+          
             return result;
         }
         catch (Exception ex)
@@ -90,7 +92,7 @@ public class API_handler
             return default;
         }
 
-        www.Dispose();
+     
     }
 
     public async Task PostVisit(string url) {
