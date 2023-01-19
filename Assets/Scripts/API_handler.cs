@@ -30,7 +30,7 @@ public class API_handler
           //  Debug.Log($"Success:  {www.downloadHandler.text}");
             return result;
         }
-        catch (Exception ex)
+        catch 
         {
           //  Debug.LogError($"{this} Could not parse response {ex.Message}");
             return default;
@@ -86,7 +86,7 @@ public class API_handler
           
             return result;
         }
-        catch (Exception ex)
+        catch 
         {
            // Debug.LogError($"{this} Could not parse response {ex.Message}");
             return default;
