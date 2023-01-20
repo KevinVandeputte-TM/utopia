@@ -80494,11 +80494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 906072147063622866, guid: 5224fd474623c7047b15592185601f76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2000
+      value: -165
       objectReference: {fileID: 0}
     - target: {fileID: 906072147063622866, guid: 5224fd474623c7047b15592185601f76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 275
+      value: 1225
       objectReference: {fileID: 0}
     - target: {fileID: 906072147063622866, guid: 5224fd474623c7047b15592185601f76, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80535,6 +80535,18 @@ PrefabInstance:
     - target: {fileID: 906072147063622867, guid: 5224fd474623c7047b15592185601f76, type: 3}
       propertyPath: m_Name
       value: Notification
+      objectReference: {fileID: 0}
+    - target: {fileID: 906072147275473143, guid: 5224fd474623c7047b15592185601f76, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906072147275473143, guid: 5224fd474623c7047b15592185601f76, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 18c4403a241efbd44a719d185db57889, type: 3}
+    - target: {fileID: 906072147275473143, guid: 5224fd474623c7047b15592185601f76, type: 3}
+      propertyPath: m_Color.a
+      value: 0.64705884
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5224fd474623c7047b15592185601f76, type: 3}
