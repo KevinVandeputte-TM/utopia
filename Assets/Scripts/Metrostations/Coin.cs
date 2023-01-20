@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    new Rigidbody2D rigidbody2D;
+    Rigidbody2D rigidbody2D;
     // Start is called before the first frame update
     void Awake()
     {
