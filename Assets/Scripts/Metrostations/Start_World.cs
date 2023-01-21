@@ -36,7 +36,7 @@ public class Start_World : MonoBehaviour
         UI_question.SetActive(false);
 
         //loading canvas - show at startup
-        Transform loadingcanvas = transform.Find("/Loading");
+        Transform loadingcanvas = transform.Find("/Loading_MAP2WORLD");
         loadingcanvas.gameObject.SetActive(true);
 
 
