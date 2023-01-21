@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/0_7_StartScreen/StartScreen.unity
+    guid: d74c636001320b242b07bcd8d8e51814
+  - enabled: 1
+    path: Assets/Scenes/0_8_Intro/Intro.unity
+    guid: 1cefc93520d5631418a3b28451524f72
+  - enabled: 1
     path: Assets/Scenes/0_Home/MainMenu.unity
     guid: 5c7fbd4e454aef64b8791207f9f5aded
   - enabled: 1
@@ -18,26 +24,17 @@ EditorBuildSettings:
     path: Assets/Scenes/3_Login/Login.unity
     guid: dcb59dc8e8ade4c4a9158a3f34d919c5
   - enabled: 1
+    path: Assets/Scenes/4_Metronetwork/4_10_LoginToNetwork/LoginToNetwork.unity
+    guid: ec06a33a1293d4d4f8d3f82fefa3509e
+  - enabled: 1
     path: Assets/Scenes/4_Metronetwork/Metronetwork.unity
     guid: 5782a25a19ed8bb4cab5f14009bcc87f
-  - enabled: 1
-    path: Assets/Scenes/5_Metrostations/Metrostation 1.unity
-    guid: 5b453ee9b4619424fb98c9bbaef6e758
   - enabled: 1
     path: Assets/Scenes/5_Metrostations/Org_Mgmt/Org_mgmt.unity
     guid: 766d548633e34b345ad695e801a3d4d8
   - enabled: 1
-    path: Assets/Scenes/0_7_StartScreen/StartScreen.unity
-    guid: d74c636001320b242b07bcd8d8e51814
-  - enabled: 1
-    path: Assets/Scenes/8_Intro/Intro.unity
-    guid: 1cefc93520d5631418a3b28451524f72
-  - enabled: 1
     path: Assets/Scenes/5_Metrostations/9_Sport/Sport.unity
     guid: 617ecf10828ffcc44a2cdbb59c583aa1
-  - enabled: 1
-    path: Assets/Scenes/4_Metronetwork/4_10_LoginToNetwork/LoginToNetwork.unity
-    guid: ec06a33a1293d4d4f8d3f82fefa3509e
   - enabled: 0
     path: Assets/Scenes/Archive/Login.unity
     guid: affd712bddf3be54c9f336e0f23630fc

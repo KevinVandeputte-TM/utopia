@@ -32,30 +32,30 @@ public class MenuButton : MonoBehaviour
 				switch (sceneToNavigateTo)
                 {
 					case "Home":
-                        LoadScene(0);
-                        break;
-					case "About":
-						LoadScene(1);
-						break;
-					case "Highscores":
                         LoadScene(2);
                         break;
-                    case "Login":
-                        LoadScene(3);
-                        break;
-                    case "Metronetwork":
+					case "About":
+						LoadScene(3);
+						break;
+					case "Highscores":
                         LoadScene(4);
                         break;
-                    case "Metrostation":
+                    case "Login":
                         LoadScene(5);
                         break;
+                    case "Metronetwork":
+                        LoadScene(7);
+                        break;
+                    case "Metrostation":
+                        LoadScene(7);
+                        break;
                     case "Intro":
-                        LoadScene(8);
+                        LoadScene(1);
                         break;
 					case "StartGame":
                         databaseManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<DatabaseManager>();
 
-                        databaseManager.CreateUser(10);
+                        databaseManager.CreateUser(6);
                      
                         break;
                     default:

@@ -93,7 +93,7 @@ public class LeaveWorld : MonoBehaviour
             } else if(player != null && !player.isBusy && player.canLeave){
                 CurrentUser.Instance.SetCurrentStation(0);
                 transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
-                transition.LoadLevel(4);
+                transition.LoadLevel(7);
             }
 
         }
