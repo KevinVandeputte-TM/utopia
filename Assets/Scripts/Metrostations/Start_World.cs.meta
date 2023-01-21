@@ -3,7 +3,19 @@ guid: 748e6b4d2e1b07e499ba700a98b812b4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - characterOriginal: {instanceID: 0}
+  - answerButton: {instanceID: 0}
+  - color1: {fileID: 7108339969198208228, guid: 33a0bf7ccea51104097bfa713a2bf413, type: 3}
+  - color2: {instanceID: 0}
+  - color3: {instanceID: 0}
+  - color4: {instanceID: 0}
+  - color5: {instanceID: 0}
+  - stationText: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - questionText: {instanceID: 0}
+  - nrQText: {instanceID: 0}
+  - UI_question: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
