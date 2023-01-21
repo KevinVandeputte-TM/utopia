@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Notification : MonoBehaviour
 {
-    public Text notTitle;
-    public Text notSubtitle;
+    public TextMeshProUGUI notTitle;
+    public TextMeshProUGUI notSubtitle;
     Animator animator;
 
     // Start is called before the first frame update
