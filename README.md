@@ -5,7 +5,7 @@ Welcome to Utopia 2.0! In this repository you can find the source code of team '
 
 The core layout of Utopia is represented as an underground network, in which the stations each represent an education. The individual lines can be seen as a collection of educations that follow the same kind of interest. At the start of the game, the student selects a field of interest, which then determines the starting location of their adventure. From then on, he or she can traverse the network and discover all educations that are offered by Thomas More.
 
-![Metro](https://user-images.githubusercontent.com/74854941/212755668-511688ca-6d7e-4c9a-8a33-e5dd3e1bfc0e.png)
+![Metronetwork](https://user-images.githubusercontent.com/74854941/213920166-ea474b0c-dca5-40ef-96c8-7a8b13d4750d.png)
 
 Further in this documentation, we will give a rundown of the composition of Utopia, and the different applications that it is made of. We can distinghuish three  sections:
 1. The game itself is made in the Unity game engine.
@@ -47,8 +47,13 @@ All functionality and logic is stored in C# scripts. These allow the programmer 
 ### Useful links
 A handful tutorials were followed to get to know the Unity game engine. Below you can find some useful links that can help you get on your way with Unity.
 
+**General information and tutorials**
+- [Unity documentation](https://docs.unity3d.com/Manual/index.html)
+- [Unity learning platform](https://learn.unity.com/)
 - [Ruby's Adventure](https://learn.unity.com/project/ruby-s-2d-rpg)
   - This tutorial is ideal for building experience in Unity for Isometric 2D development. Basic concepts are shown while building this game, leaving you with an overall understanding of the platform after you've finished it.
+
+**Tutorials specific for Utopia**
 - [How to scale Unity UI objects for every screen - Unity UI tutorial](https://www.youtube.com/watch?v=QnT-2KxVvyk&ab_channel=CocoCode)
 - [How to mak a menu in Unity](https://www.youtube.com/watch?v=lF26yGJbsQk&ab_channel=Tarodev)
 - [How to make AWESOME Scene Transitions in Unity!](https://www.youtube.com/watch?v=CE9VOZivb3I&t=836s&ab_channel=Brackeys)
@@ -60,8 +65,4 @@ For documentation of the back-end we refer to the `edge-service`, where all info
 Click [here](https://github.com/KevinVandeputte-TM/utopia_edgeservice) to consult the Edge Service repository.
 
 ## Web application
-A Java web application built in the Spring Boot framework is used to host the game. The repository can be found [here](https://github.com/ValerieBecquart/project4website). The Unity project is built in a WebGL format, which allows us to run it on this web application using an iframe. 
-
-Besides hosting the game, the web application can also gather feedback from the user after playing the game. Different aspects of the game can be judged in a feedback form, and also a general score can be given.
-
-Lastly, the game gathers information on how many visits were made at each station. This information is displayed using graphs made in Qlik sense. Feedback entered by the users is also displayed. The graphs are loaded on a separate page `/analyse` using iframes. Data shown here can be useful to generate insights in the popularity of each education. Feedback from the users can be used to further improve the game.
+A Java web application built in the Spring Boot framework is used to host the game. The repository can be found [here](https://github.com/ValerieBecquart/project4website). In this repo you will also find added documentation on the functionality that is offered.
