@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Sci Fi Train by FiveBrosStopMosYT licensed under CC-BY 4.0.
+// metro-object: Sci Fi Train by FiveBrosStopMosYT licensed under CC-BY 4.0.
 
 public class MetroController : MonoBehaviour
 {
@@ -23,7 +23,6 @@ public class MetroController : MonoBehaviour
         int startposition = currentUser.GetStartStationID();
         StartPosition(startposition);
         canMove = true;
-
     }
 
     //get Metro, if not existing create new object
@@ -46,10 +45,7 @@ public class MetroController : MonoBehaviour
         Vector2 position = transform.position;
         Vector2 newPosition = GameObject.Find(stationName).transform.position;
 
-        //transform
+        //transform: set metroposition to position station
         transform.position = newPosition;
     }
-
-
-
 }

@@ -7,11 +7,11 @@ public class Score : MonoBehaviour
 {
     private CurrentUser currentUser;
     public TextMeshProUGUI scoreText;
-    // Start is called before the first frame update
+    
     void Start()
     {
+        //get current user
         currentUser = CurrentUser.GetCurrentUser();
-
     }
 
     void Update()
@@ -19,8 +19,6 @@ public class Score : MonoBehaviour
         if (currentUser.GetUser() != null)
         {
             scoreText.text = currentUser.GetUser().score.ToString();
-
         }
-
     }
 }

@@ -34,6 +34,9 @@ public class StationController : MonoBehaviour
 	private CurrentUser currentUser;
 	private GameObject metro;
 	MetroController metroController;
+	private GameObject metroLineObject;
+
+	//colors for metrolines
 	private string[,] ColorArray = new string[8, 2] {
 		{ "Business and Tourism","E9B723"},
 		{ "Sport", "67C0EE"},
@@ -44,14 +47,9 @@ public class StationController : MonoBehaviour
 		{ "Education", "962373"},
 		{ "Media and Communication", "DF739C"}
 	};
-	private GameObject metroLineObject;
 
-
-
-	// Start is called before the first frame update
 	void Start()
 	{
-		//api = GameObject.Find("Scripts").GetComponent<API_calls>();
 		metroController = GameObject.Find("Metro").GetComponent<MetroController>();
 		metroLineObject = GameObject.Find("MetroLine");
 		currentUser = CurrentUser.GetCurrentUser();
@@ -62,7 +60,6 @@ public class StationController : MonoBehaviour
 		// check if stationID
 		if (stationID != 0)
 		{
-
 			//get Station from stationID;
 			station = currentUser.GetStationByID(stationID);
 
@@ -86,85 +83,76 @@ public class StationController : MonoBehaviour
 			{
 				stationName = "halte";
 			}
-		}
-		
+		}	
 	}
 
-
-	// Update is called once per frame
 	void Update()
-	{
-			if (isVisited)
-			{
-				gameObject.GetComponent<Renderer>().material.color = new Color(0, 250, 0);
-			}
-
-			//when metro has same position as station. Station = currentStation
-			if (metro.transform.position == transform.position)
-			{
-				isCurrentStation = true;
-			}
-			else
-			{
-				isCurrentStation = false;
-			}
-			//set metro active 
-			metro.SetActive(true);
-
-			//set name station and metroLinetext in scene 
-			if (isCurrentStation)
-			{
-				stationText.text = stationName.ToUpper();
-				MetroLineText.text = metroLine;
-				metroLineObject.GetComponent<Image>().color = GetColorFromGameTag(metroLine);
-			
-				if (metroController.canMove)
-				{
-					// move up
-					if (Input.GetAxis("Vertical") > 0 & (upDestination != null))
-					{
-						isCurrentStation = false;
-						StartCoroutine(Movemetro(upDestination));
-						StartCoroutine(MetroVertical());
-					}
-
-					// move right
-					else if (Input.GetAxis("Horizontal") > 0 && (rightDestination != null))
-					{
-						isCurrentStation = false;
-						StartCoroutine(Movemetro(rightDestination));
-						StartCoroutine(MetroHorizontal());
-
-					}
-
-					//move down
-					else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
-					{
-						isCurrentStation = false;
-						StartCoroutine(Movemetro(downDestination));
-						StartCoroutine(MetroVertical());
-					}
-
-					//move left
-					else if (Input.GetAxis("Horizontal") < 0 && (leftDestination != null))
-					{
-						isCurrentStation = false;
-						StartCoroutine(Movemetro(leftDestination));
-						StartCoroutine(MetroHorizontal());
-					}
-
-					//enter world on enter-press
-					if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != 0))
-					{
-						currentUser.SetCurrentStation(stationID);
-						currentUser.SetStartStationID(stationID);
-						transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
-						transition.LoadLevel(world);
-
-					}
-				}
+	{	
+		//when metro has same position as station. Station = currentStation
+		if (metro.transform.position == transform.position)
+		{
+			isCurrentStation = true;
+		}
+		else
+		{
+			isCurrentStation = false;
 		}
 
+		//set metro active 
+		metro.SetActive(true);
+
+		//set name station and metroLinetext in scene 
+		if (isCurrentStation)
+		{
+			stationText.text = stationName.ToUpper();
+			MetroLineText.text = metroLine;
+			metroLineObject.GetComponent<Image>().color = GetColorFromGameTag(metroLine);
+			
+			if (metroController.canMove)
+			{
+				// move up
+				if (Input.GetAxis("Vertical") > 0 & (upDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(upDestination));
+					StartCoroutine(MetroVertical());
+				}
+
+				// move right
+				else if (Input.GetAxis("Horizontal") > 0 && (rightDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(rightDestination));
+					StartCoroutine(MetroHorizontal());
+				}
+
+				//move down
+				else if (Input.GetAxis("Vertical") < 0 && (downDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(downDestination));
+					StartCoroutine(MetroVertical());
+				}
+
+				//move left
+				else if (Input.GetAxis("Horizontal") < 0 && (leftDestination != null))
+				{
+					isCurrentStation = false;
+					StartCoroutine(Movemetro(leftDestination));
+					StartCoroutine(MetroHorizontal());
+				}
+
+				//enter world on enter-press
+				if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter")) && isAvailable && (world != 0))
+				{
+					currentUser.SetCurrentStation(stationID);
+					currentUser.SetStartStationID(stationID);
+					transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
+					transition.LoadLevel(world);
+
+				}
+			}
+		}
 	}
 
 	//function to move metro toward next station
@@ -178,7 +166,6 @@ public class StationController : MonoBehaviour
 			metro.transform.position = Vector3.MoveTowards(metro.transform.position, targetPosition, 5f * Time.deltaTime);
 			yield return null;
 		}
-
 	}
 
 	//set metroposition vertical
@@ -191,7 +178,6 @@ public class StationController : MonoBehaviour
 			metro.transform.Rotate(positionVertical);
 			yield return null;
 		}
-
 	}
 
 	//set metroposition horizontal
@@ -204,7 +190,6 @@ public class StationController : MonoBehaviour
 			metro.transform.Rotate(positionHorizontal);
 			yield return null;
 		}
-
 	}
 
 
@@ -233,18 +218,10 @@ public class StationController : MonoBehaviour
 			for (int i = 0; i < ColorArray.GetLength(0); i++)
 			{
 				if (ColorArray[i , 0] == gametag)
-					{
-						hex= ColorArray[i,1];
-					}
+				{
+					hex= ColorArray[i,1];
+				}
 			}
 		return GetColorFromString(hex);		
 	}
-
-
-
-
-
-
-
-
 }
