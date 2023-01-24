@@ -11,7 +11,6 @@ public class Transition : MonoBehaviour
 
     public void LoadLevel(int sceneIndex)
     {
-        Debug.Log("Transition Load Level");
         StartCoroutine(DelayLoadLevel(sceneIndex));
     }
 

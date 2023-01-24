@@ -11,28 +11,13 @@ public class SceneLoader : MonoBehaviour
     
     //when enabled
     void OnEnable(){
-        //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-        //LoadScene(0);
        LoadScene(index);
     }
 
     	void LoadScene(int sceneIndex)
     {
-        Debug.Log("Load scene !");
         transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
         transition.LoadLevel(sceneIndex);
-        //this is covered in the Transition.
-        //SceneManager.LoadScene(SceneIndex);
-
-
-
-
-
-
-
-
-
-
     }
 
 }
