@@ -27,7 +27,6 @@ public class MenuButton : MonoBehaviour
 			}else if (animator.GetBool ("pressed")){
 				animator.SetBool ("pressed", false);
 				animatorFunctions.disableOnce = true;
-				Debug.Log("This is fired: now we navigate!" );
 				
 				switch (sceneToNavigateTo)
                 {
@@ -69,21 +68,8 @@ public class MenuButton : MonoBehaviour
 
 	void LoadScene(int sceneIndex)
     {
-        Debug.Log("Load scene !");
-         transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
+        transition = GameObject.FindGameObjectWithTag("Transition").GetComponent<Transition>();
         transition.LoadLevel(sceneIndex);
-        //this is covered in the Transition.
-        //SceneManager.LoadScene(SceneIndex);
-
-
-
-
-
-
-
-
-
-
     }
 
 
