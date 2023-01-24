@@ -26,8 +26,6 @@ public class LeaveWorld : MonoBehaviour
         else
         {
             metro = GameObject.Find("Metro").GetComponent<MetroController>();
-
-
         }
     }
 
@@ -49,7 +47,6 @@ public class LeaveWorld : MonoBehaviour
                     //Set player busy 
                     player.isBusy = false;
                     player.canMove = true;
-
                 }
 
             }
@@ -71,7 +68,6 @@ public class LeaveWorld : MonoBehaviour
                     player.canMove = false;
 
                 }
-
             }
         }    
         
@@ -80,8 +76,7 @@ public class LeaveWorld : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Entrance")
-        {
-            
+        {    
             if (player != null && !player.isBusy && !player.canLeave)
             {
                 //show exitpanel
@@ -116,13 +111,11 @@ public class LeaveWorld : MonoBehaviour
         {
             player.isBusy = false;
             player.canMove = true;
-
         }
         if (metro != null)
         {
             // set metro can move
             metro.canMove = true;
-
         }
 
     }

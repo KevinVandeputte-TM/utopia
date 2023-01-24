@@ -15,17 +15,20 @@ public class CurrentUser : MonoBehaviour
 
 
     //when start of scene get the current user
-    //for testing set default user, currentstation and startstationID
      void Start()
     {
         api = gameObject.GetComponent<API_calls>();
         GetCurrentUser();
+        SetStations();
+
+        //for testing set default user, currentstation and startstationID
+        /*
         SetUser(1);
         SetCurrentStation(1000);
         SetStartStationID(1011);
-        SetStations();
+        */
     }
-    
+
     //constructor
     private CurrentUser()
     {
@@ -67,10 +70,12 @@ public class CurrentUser : MonoBehaviour
     public async void SetCurrentStation(int id) {
         //id>0: add visited station to list 
         if (id > 0)
-        {
+        {   
+            //get StationModel from station
             currentStation = await api.getStation(id);
             List<int> oldList = user.stationsVisited;
             List<int> newList = new List<int>();
+            //if no List yet, create newList
             if (oldList == null || oldList.Count == 0)
             {
                 newList.Add(id);
@@ -89,7 +94,6 @@ public class CurrentUser : MonoBehaviour
         {
             currentStation = null;
         }
-
     }
 
     //get the station currently visiting
@@ -110,8 +114,6 @@ public class CurrentUser : MonoBehaviour
         return currentStation.stationID;
     }
 
-
-
     //getScore
     public int GetScore()
     {
@@ -129,7 +131,6 @@ public class CurrentUser : MonoBehaviour
     public void SetStartStationID(int id)
     {
         startStationID = id;
-
     }
 
     //get start station ID
@@ -147,6 +148,7 @@ public class CurrentUser : MonoBehaviour
     //get stations
     public List<StationModel> GetStations()
     {
+        //only get from api Stations if List empty
         if(stations.Count == 0)
         {
             SetStations();
