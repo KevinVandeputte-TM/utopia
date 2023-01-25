@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 695420042}
   - component: {fileID: 695420041}
   m_Layer: 5
-  m_Name: Text_lorem
+  m_Name: Text_spel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -525,15 +525,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin
-    tempor id eu nisl. Ultricies leo integer malesuada nunc vel. Nibh tellus molestie
-    nunc non blandit massa enim. Odio ut sem nulla pharetra diam sit amet nisl suscipit.
-    Magna fermentum iaculis eu non diam phasellus. Donec et odio pellentesque diam
-    volutpat commodo sed egestas egestas. Sem et tortor consequat id. Mi in nulla
-    posuere sollicitudin aliquam ultrices sagittis orci.Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut porttitor leo a diam sollicitudin temp.
+  m_text: 'De spelregels zijn eenvoudig. Verdien zo veel mogelijk punten. Dit doe
+    je door zo veel mogelijk vragen correct te beantwoorden. De vragen reflecteren
+    kennis uit het vakgebied waarvoor het station werd ontworpen.
+
+
+    Vragen kan
+    je beantwoorden door in de wereld  tegen andere karakters aan te lopen. Zij zullen
+    je dan een vraag geven. Hoeveel vragen er nog verstopt zitten in de wereld kan
+    je linksboven aan het scherm terugvinden.
+
+
+    Benieuwd hoe je het hebt gedaan?
+    Check dat zeker het highscore bord!
+
+
+    Veel plezier in Utopia!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
   m_sharedMaterial: {fileID: 773548756916339430, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
@@ -702,7 +709,7 @@ GameObject:
   - component: {fileID: 1231493820}
   - component: {fileID: 1231493819}
   m_Layer: 5
-  m_Name: Text_lorem (1)
+  m_Name: Text_doel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,16 +755,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut porttitor leo a diam sollicitudin
-    tempor id eu nisl. Ultricies leo integer malesuada nunc vel. Nibh tellus molestie
-    nunc non blandit massa enim. Odio ut sem nulla pharetra diam sit amet nisl suscipit.
-    Magna fermentum iaculis eu non diam phasellus. Donec et odio pellentesque diam
-    volutpat commodo sed egestas egestas. Sem et tortor consequat id. Mi in nulla
-    posuere sollicitudin aliquam ultrices sagittis orci.Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-    magna aliqua. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Ultricies
-    leo integ.
+  m_text: "Utopia is een uitnodigende\_exploratie tool\_die aan de hand van speltechnieken
+    toekomstige studenten door het metronetwerk en de verschillende stations moet
+    leiden om hen zo een beter beeld te geven van verschillende studierichtingen
+    door hen onder te dompelen in het vakgebied en hen uit te dagen om verder te
+    kijken dan de gekende paden.\_\r\n\nUtopia is momenteel volop in ontwikkeling
+    en deze versie is bedoeld als een Proof Of Concept om de krijtlijnen en de mogelijkheden
+    van de tool vorm te geven en te verkennen. In dit opzicht is onderaan de pagina
+    een feedback formulier voorzien en wordt feedback ten zeerste gewaardeerd."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
   m_sharedMaterial: {fileID: 773548756916339430, guid: 5829fc790fa5f504885965557ae46c15, type: 2}
